@@ -1,0 +1,111 @@
+.contribution {
+  background-color: $color-light-gray;
+
+  @include media('<desktop') {
+    padding: 40px 0;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    gap: 24px 32px;
+
+    @include media('<desktop') {
+      flex-direction: column;
+    }
+  }
+
+  &__content {
+    width: 32%;
+    padding: 24px 0;
+
+    @include media('<desktop') {
+      width: 100%;
+      padding: 0;
+    }
+  }
+
+  &__title {
+    max-width: 400px;
+    width: 100%;
+    @include adaptive-value('font-size', 56, 28, 1);
+    @include adaptive-value('margin-bottom', 32, 24, 1);
+
+    @include media('<desktop') {
+      max-width: 100%;
+    }
+  }
+
+  &__description {
+    margin-bottom: 48px;
+
+    @include media('<desktop') {
+      margin-bottom: 0;
+    }
+
+    p {
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  &__image-grid {
+    width: 68%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+
+    @include media('<desktop') {
+      width: 100%;
+    }
+
+    @include media('<tablet') {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 4px;
+    }
+
+    @include media('<phone') {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    &-item {
+      aspect-ratio: 1/1;
+
+      &.empty {
+        @include media('<desktop') {
+          display: none;
+        }
+      }
+
+      &-image {
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+    }
+  }
+
+  &__btn {
+    @include media('<phone') {
+      width: 100%;
+    }
+    &.desktop-only {
+      @include media('<desktop') {
+        display: none;
+      }
+    }
+
+    &.mobile-only {
+      @include media('>=desktop') {
+        display: none;
+      }
+    }
+  }
+}
