@@ -1,0 +1,158 @@
+.support {
+  padding: 80px 0;
+  background-color: $background-red;
+  overflow: hidden;
+
+  @include media('<tablet') {
+    padding: 40px 0;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+
+    @include media('<tablet') {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 24px;
+    }
+  }
+
+  &__content {
+    flex: 0 0 42%;
+    max-width: 430px;
+
+    @include media('<tablet') {
+      flex: none;
+      max-width: none;
+    }
+  }
+
+  &__label {
+    display: inline-block;
+    color: $color-white;
+    @include adaptive-value('font-size', 16, 12, 1);
+    @include adaptive-value('margin-bottom', 16, 8, 1);
+  }
+
+  &__title {
+    color: $color-white;
+    @include adaptive-value('font-size', 48, 28, 1);
+    @include adaptive-value('margin-bottom', 32, 24, 1);
+  }
+
+  &__description {
+    color: $color-white;
+    @include adaptive-value('font-size', 18, 15, 1);
+    @include adaptive-value('margin-bottom', 32, 16, 1);
+  }
+
+  &__content-footer {
+    border-top: 1px solid $color-white;
+    @include adaptive-value('padding-top', 32, 16, 1);
+
+    &-count {
+      display: inline-block;
+      color: $color-white;
+      @include adaptive-value('font-size', 52, 40, 1);
+      @include adaptive-value('margin-bottom', 16, 8, 1);
+    }
+
+    &-description {
+      color: $color-white;
+      max-width: 250px;
+      width: 100%;
+
+      @include media('<tablet') {
+        max-width: none;
+        color: rgba($color-white, 0.8);
+      }
+    }
+  }
+
+  &__slider {
+    flex: 1 1 auto;
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  &__slide {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: 480px !important;
+    background-color: $color-white;
+
+    @include media('<tablet') {
+      height: 450px !important;
+    }
+
+    &-image {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: 220px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &-link {
+      display: inline-flex;
+      align-items: center;
+      max-width: calc(100% - 48px);
+      width: fit-content;
+      margin: 24px 24px 16px 24px;
+    }
+
+    &-logo {
+      display: block;
+      width: auto;
+      max-width: 100%;
+      height: 70px;
+
+      @include media('<tablet') {
+        height: 50px;
+      }
+
+      img {
+        width: auto;
+        max-width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    &-description {
+      margin: 0 24px 16px 24px;
+    }
+  }
+
+  &__navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 40px;
+  }
+
+  &__pagination {
+    position: static !important;
+    width: max-content !important;
+
+    .swiper-pagination-bullet {
+      background-color: $color-white;
+      opacity: 0.35;
+    }
+
+    .swiper-pagination-bullet-active {
+      opacity: 1;
+    }
+  }
+}

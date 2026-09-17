@@ -1,6 +1,7 @@
 import { initHeaderBurger } from './modules/header';
 import { initHelpTabs } from './modules/help-tabs';
 import { initHelpSliders } from './modules/help-slider';
+import { initSupportSlider } from './modules/support-slider';
 import { initCurrentYear } from './modules/year';
 
 function init(): void {
@@ -8,6 +9,7 @@ function init(): void {
   initHeaderBurger();
   initHelpTabs();
   initHelpSliders();
+  initSupportSlider();
   initCurrentYear();
 }
 
