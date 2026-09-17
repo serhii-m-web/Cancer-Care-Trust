@@ -1,8 +1,8 @@
-<section class="hero" id="hero">
+<section class="hero" id="hero" aria-labelledby="hero-title">
   <div class="container">
     <div class="hero__inner">
       <div class="hero__content">
-        <h1 class="hero__title">
+        <h1 class="hero__title" id="hero-title">
           Practical Support. <br />Financial Help. <br />
           Better Days Ahead.
         </h1>
@@ -12,13 +12,13 @@
           care, support and research across the UK.
         </p>
         <div class="hero__actions">
-          <a class="hero__btn btn primary" href="#cta">Donate Today</a>
-          <a class="hero__btn btn secondary" href="#features"
+          <a class="hero__btn btn primary" href="#start">Donate Today</a>
+          <a class="hero__btn btn secondary" href="#finding"
             >Get Support {{icon "arrow-right" class="hero__btn-icon"}}
           </a>
         </div>
       </div>
-      {{picture "/images/hero-img.png" "Hero image" class="hero__image"}}
+      {{picture "/images/hero-img.png" "Person receiving support from Cancer Care Trust" class="hero__image" loading="eager" fetchpriority="high"}}
     </div>
   </div>
 </section>

@@ -1,23 +1,29 @@
-<section class="diagnosis">
+<section class="diagnosis" id="diagnosis" aria-labelledby="diagnosis-title">
   <div class="container">
     <div class="diagnosis__inner">
       <div class="diagnosis__image-content">
-        {{picture "/images/diagnosis-img.png" "Diagnosis image"
+        {{picture "/images/diagnosis-img.png" "People affected by cancer receiving care and support"
         class="diagnosis__image"}}
         <div class="diagnosis__column">
           <img
             src="/icons/icon_1.svg"
-            alt="image not found"
+            alt=""
             class="diagnosis__column-icon"
+            aria-hidden="true"
           />
-          <span class="diagnosis__column-title">403k +</span>
+          <p class="diagnosis__column-title">
+            <span class="visually-hidden">Statistic:</span>
+            403k +
+          </p>
           <p class="diagnosis__column-description">
             new cancer cases every year in the UK.
           </p>
         </div>
       </div>
       <div class="diagnosis__content">
-        <h2 class="diagnosis__title">More Than a Diagnosis</h2>
+        <h2 class="diagnosis__title" id="diagnosis-title">
+          More Than a Diagnosis
+        </h2>
         <div class="diagnosis__description">
           <p>
             Cancer can affect much more than health. It can change income, work,
@@ -30,7 +36,7 @@
             people affected by cancer.
           </p>
         </div>
-        <a href="#" class="diagnosis__btn btn secondary">
+        <a href="#help" class="diagnosis__btn btn secondary">
           Learn More About Cancer Care Trust {{icon "arrow-right"
           class="diagnosis__btn-icon"}}
         </a>

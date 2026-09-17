@@ -1,4 +1,4 @@
-<section class="help" id="help">
+<section class="help" id="help" aria-labelledby="help-title">
   <div class="container">
     <div class="help__inner">
       <div class="help__buttons" role="tablist" aria-label="Help sections">
@@ -9,6 +9,7 @@
           id="help-tab-we"
           aria-selected="true"
           aria-controls="help-panel-we"
+          tabindex="0"
           data-title="How We Help"
           data-description="Our work is focused on providing meaningful support where it can make a real difference."
         >
@@ -21,13 +22,14 @@
           id="help-tab-you"
           aria-selected="false"
           aria-controls="help-panel-you"
+          tabindex="-1"
           data-title="How You Can Help"
           data-description="There are many ways to get involved and help us support people affected by cancer."
         >
           How You Can Help
         </button>
       </div>
-      <h2 class="help__title" data-help-title>How We Help</h2>
+      <h2 class="help__title" id="help-title" data-help-title>How We Help</h2>
       <p class="help__description" data-help-description>
         Our work is focused on providing meaningful support where it can make a
         real difference.
@@ -44,7 +46,8 @@
       <div class="help__content swiper">
         <div class="swiper-wrapper">
           <div class="help__content-item swiper-slide">
-            {{{picture "/images/help-1.png" class="help__content-item-image"}}}
+            {{{picture "/images/help-1.png" "Hands offering practical support"
+            class="help__content-item-image"}}}
             <div class="help__content-item-inner">
               <h3 class="help__content-item-title">
                 Financial &amp; Practical Support
@@ -54,13 +57,14 @@
                 financial and practical pressures that may arise during and
                 after treatment.
               </p>
-              <a href="#" class="help__content-item-link btn primary"
+              <a href="#finding" class="help__content-item-link btn primary"
                 >Get Support</a
               >
             </div>
           </div>
           <div class="help__content-item swiper-slide">
-            {{{picture "/images/help-2.png" class="help__content-item-image"}}}
+            {{{picture "/images/help-2.png" "Healthcare professionals collaborating"
+            class="help__content-item-image"}}}
             <div class="help__content-item-inner">
               <h3 class="help__content-item-title">
                 Funding Cancer Organisations
@@ -69,13 +73,14 @@
                 We support charities and organisations delivering specialist
                 care, services and research for people affected by cancer.
               </p>
-              <a href="#" class="help__content-item-link btn primary"
+              <a href="#support" class="help__content-item-link btn primary"
                 >See Who We Support</a
               >
             </div>
           </div>
           <div class="help__content-item swiper-slide">
-            {{{picture "/images/help-3.png" class="help__content-item-image"}}}
+            {{{picture "/images/help-3.png" "Community care and support network"
+            class="help__content-item-image"}}}
             <div class="help__content-item-inner">
               <h3 class="help__content-item-title">
                 Extending the Reach of Support
@@ -85,7 +90,7 @@
                 strengthen the wider network of care and support available to
                 people affected by cancer.
               </p>
-              <a href="#" class="help__content-item-link btn primary"
+              <a href="#numbers" class="help__content-item-link btn primary"
                 >See Our Impact</a
               >
             </div>
@@ -123,7 +128,8 @@
       <div class="help__content swiper">
         <div class="swiper-wrapper">
           <div class="help__content-item swiper-slide">
-            {{{picture "/images/help-1.png" class="help__content-item-image"}}}
+            {{{picture "/images/help-1.png" "Donation supporting cancer care"
+            class="help__content-item-image"}}}
             <div class="help__content-item-inner">
               <h3 class="help__content-item-title">Donate</h3>
               <p class="help__content-item-description">
@@ -131,33 +137,35 @@
                 to people affected by cancer and fund organisations improving
                 cancer care.
               </p>
-              <a href="#" class="help__content-item-link btn primary"
+              <a href="#start" class="help__content-item-link btn primary"
                 >Donate Today</a
               >
             </div>
           </div>
           <div class="help__content-item swiper-slide">
-            {{{picture "/images/help-2.png" class="help__content-item-image"}}}
+            {{{picture "/images/help-2.png" "Community fundraising for cancer support"
+            class="help__content-item-image"}}}
             <div class="help__content-item-inner">
               <h3 class="help__content-item-title">Fundraise</h3>
               <p class="help__content-item-description">
                 Organise an event, challenge or community activity to raise
                 funds and help more people get the support they need.
               </p>
-              <a href="#" class="help__content-item-link btn primary"
+              <a href="#partners" class="help__content-item-link btn primary"
                 >Start Fundraising</a
               >
             </div>
           </div>
           <div class="help__content-item swiper-slide">
-            {{{picture "/images/help-3.png" class="help__content-item-image"}}}
+            {{{picture "/images/help-3.png" "Partnership to extend cancer support"
+            class="help__content-item-image"}}}
             <div class="help__content-item-inner">
               <h3 class="help__content-item-title">Partner With Us</h3>
               <p class="help__content-item-description">
                 Work with Cancer Care Trust to extend support across communities
                 and strengthen services for people affected by cancer.
               </p>
-              <a href="#" class="help__content-item-link btn primary"
+              <a href="#partners" class="help__content-item-link btn primary"
                 >Get Involved</a
               >
             </div>

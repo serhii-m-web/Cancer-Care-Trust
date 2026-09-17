@@ -1,34 +1,40 @@
 <header class="site-header" id="header">
   <div class="container">
     <div class="site-header__inner">
-      <a class="site-header__logo" href="/">
-        {{{picture "/images/header-logo-image.png"
+      <a class="site-header__logo" href="#hero">
+        {{{picture "/images/header-logo-image.png" alt=""
         class="site-header__logo-image"}}} {{{picture
-        "/images/header-logo-text.png" class="site-header__logo-text"}}}
+        "/images/header-logo-text.png" alt="" class="site-header__logo-text"}}}
+        <span class="visually-hidden">Cancer Care Trust — Home</span>
       </a>
-      <nav class="site-header__nav" id="header-nav">
+      <nav class="site-header__nav" id="header-nav" aria-label="Primary">
         <ul class="site-header__nav-list">
           <li class="site-header__nav-item">
-            <a class="site-header__nav-link" href="/">Home</a>
+            <a class="site-header__nav-link" href="#">Home</a>
           </li>
           <li class="site-header__nav-item">
-            <a class="site-header__nav-link" href="/">About</a>
+            <a class="site-header__nav-link" href="#">About</a>
           </li>
           <li class="site-header__nav-item">
-            <a class="site-header__nav-link" href="/">What We Do</a>
+            <a class="site-header__nav-link" href="#">What We Do</a>
           </li>
           <li class="site-header__nav-item">
-            <a class="site-header__nav-link" href="/">Support</a>
+            <a class="site-header__nav-link" href="#">Support</a>
           </li>
           <li class="site-header__nav-item">
-            <a class="site-header__nav-link" href="/">News</a>
+            <a class="site-header__nav-link" href="#">News</a>
           </li>
           <li class="site-header__nav-item">
-            <a class="site-header__nav-link" href="/">Contact</a>
+            <a class="site-header__nav-link" href="#">Contact</a>
           </li>
         </ul>
+        <a
+          href="#start"
+          class="site-header__donate-button btn primary mobile-only"
+          >Donate Today
+        </a>
       </nav>
-      <a href="#" class="site-header__donate-button btn primary"
+      <a href="#start" class="site-header__donate-button btn primary"
         >Donate Today {{icon "plus" class="site-header__donate-button-icon"}}
       </a>
       <button

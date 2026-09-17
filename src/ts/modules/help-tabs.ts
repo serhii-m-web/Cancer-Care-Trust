@@ -7,18 +7,21 @@ export function initHelpTabs(): void {
     return;
   }
 
-  const buttons = section.querySelectorAll<HTMLButtonElement>('.help__button');
+  const tablist = section.querySelector<HTMLElement>('[role="tablist"]');
+  const buttons = Array.from(
+    section.querySelectorAll<HTMLButtonElement>('.help__button'),
+  );
   const panels = section.querySelectorAll<HTMLElement>('.help__panel');
   const title = section.querySelector<HTMLElement>('[data-help-title]');
   const description = section.querySelector<HTMLElement>(
     '[data-help-description]',
   );
 
-  if (!buttons.length || !panels.length) {
+  if (!tablist || !buttons.length || !panels.length) {
     return;
   }
 
-  const activateTab = (button: HTMLButtonElement): void => {
+  const activateTab = (button: HTMLButtonElement, focus = false): void => {
     const panelId = button.getAttribute('aria-controls');
 
     buttons.forEach((item) => {
@@ -58,11 +61,49 @@ export function initHelpTabs(): void {
       swiperInstance.update();
       swiperInstance.slideTo(0, 0);
     }
+
+    if (focus) {
+      button.focus();
+    }
   };
 
   buttons.forEach((button) => {
     button.addEventListener('click', () => {
       activateTab(button);
     });
+  });
+
+  tablist.addEventListener('keydown', (event) => {
+    const currentIndex = buttons.findIndex(
+      (button) => button.getAttribute('aria-selected') === 'true',
+    );
+
+    if (currentIndex < 0) {
+      return;
+    }
+
+    let nextIndex = currentIndex;
+
+    switch (event.key) {
+      case 'ArrowRight':
+      case 'ArrowDown':
+        nextIndex = (currentIndex + 1) % buttons.length;
+        break;
+      case 'ArrowLeft':
+      case 'ArrowUp':
+        nextIndex = (currentIndex - 1 + buttons.length) % buttons.length;
+        break;
+      case 'Home':
+        nextIndex = 0;
+        break;
+      case 'End':
+        nextIndex = buttons.length - 1;
+        break;
+      default:
+        return;
+    }
+
+    event.preventDefault();
+    activateTab(buttons[nextIndex], true);
   });
 }

@@ -1,8 +1,10 @@
-<section class="start">
+<section class="start" id="start" aria-labelledby="start-title">
   <div class="container">
     <div class="start__inner">
       <div class="start__content">
-        <h2 class="start__title">Better Days Ahead Start With Support</h2>
+        <h2 class="start__title" id="start-title">
+          Better Days Ahead Start With Support
+        </h2>
         <p class="start__description">
           Cancer changes lives. Together, we can help make some of the
           challenges it brings a little easier. Whether you need support or want
@@ -10,14 +12,18 @@
           meaningful difference.
         </p>
         <div class="start__buttons">
-          <a href="#" class="start__btn btn primary-light">Donate Today</a>
-          <a href="#" class="start__btn btn secondary-light"
+          <a href="#finding" class="start__btn btn primary-light"
+            >Donate Today</a
+          >
+          <a href="#finding" class="start__btn btn secondary-light"
             >Get Support {{icon "arrow-right" class="start__btn-icon"}}
           </a>
         </div>
       </div>
-      {{picture "images/start-img.png" class="start__image"}} {{picture
-      "images/start-line.png" class="start__line"}}
+      {{picture "/images/start-img.png"
+      "People looking ahead with hope and support"
+      class="start__image"}}
+      {{picture "/images/start-line.png" alt="" class="start__line"}}
     </div>
   </div>
 </section>

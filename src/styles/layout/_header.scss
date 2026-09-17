@@ -1,5 +1,6 @@
 .site-header {
   padding: 5px 0;
+  background-color: $color-white;
 
   @include media('<tablet') {
     padding: 10px 0;
@@ -45,17 +46,30 @@
     order: 0;
 
     @include media('<desktop') {
-      display: none;
-      width: 100%;
+      position: fixed;
+      top: 79px;
+      right: 0;
+      width: 290px;
+      height: calc(100% - 69px);
+      background-color: $color-white;
+      z-index: 100;
       order: 10;
+      transform: translateX(100%);
+      transition: $animation-speed;
+      padding: 16px 24px;
+      pointer-events: none;
+      visibility: hidden;
+      box-shadow: none;
     }
   }
 
-  // &.is-menu-open &__nav {
-  //   @include media('<desktop') {
-  //     display: block;
-  //   }
-  // }
+  &.is-menu-open &__nav {
+    @include media('<desktop') {
+      transform: translateX(0);
+      pointer-events: auto;
+      visibility: visible;
+    }
+  }
 
   &__nav-list {
     display: flex;
@@ -67,13 +81,17 @@
 
     @include media('<desktop') {
       flex-direction: column;
-      gap: 16px;
-      padding: 8px 0 12px;
+      gap: 8px;
     }
   }
 
   &__nav-item {
     list-style: none;
+
+    @include media('<desktop') {
+      padding: 16px 0;
+      border-bottom: 1px solid #f0e8e8;
+    }
   }
 
   &__nav-link {
@@ -104,6 +122,14 @@
       @include media('<tablet') {
         width: 18px;
         height: 18px;
+      }
+    }
+
+    &.mobile-only {
+      width: 100%;
+      margin-top: 24px;
+      @include media('>=desktop') {
+        display: none;
       }
     }
   }

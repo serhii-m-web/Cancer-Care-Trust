@@ -1,17 +1,20 @@
-<section class="finding">
-  {{picture "/images/finding-decoration-1.png" class="finding__decoration-1"
-  alt="Finding"}} {{picture "/images/finding-decoration-2.png"
-  class="finding__decoration-2" alt="Finding"}}
+<section class="finding" id="finding" aria-labelledby="finding-title">
+  {{picture "/images/finding-decoration-1.png" alt=""
+  class="finding__decoration-1"}}
+  {{picture "/images/finding-decoration-2.png" alt=""
+  class="finding__decoration-2"}}
   <div class="container">
-    <span class="finding__label section-label">Need Support?</span>
-    <h2 class="finding__title">Finding Help Should Feel Simple</h2>
+    <p class="finding__label section-label">Need Support?</p>
+    <h2 class="finding__title" id="finding-title">
+      Finding Help Should Feel Simple
+    </h2>
     <p class="finding__description">
       If cancer is creating additional financial or practical pressures for you
       or someone close to you, Cancer Care Trust may be able to help.
     </p>
     <div class="finding__inner">
       <div class="finding__item">
-        <span class="finding__item-number">01</span>
+        <span class="finding__item-number" aria-hidden="true">01</span>
         <div class="finding__item-text">
           <h3 class="finding__item-title">Understand the Support Available</h3>
           <p class="finding__item-description">
@@ -20,9 +23,9 @@
           </p>
         </div>
       </div>
-      <div class="divider first"></div>
+      <div class="divider first" aria-hidden="true"></div>
       <div class="finding__item">
-        <span class="finding__item-number">02</span>
+        <span class="finding__item-number" aria-hidden="true">02</span>
         <div class="finding__item-text">
           <h3 class="finding__item-title">Check Eligibility</h3>
           <p class="finding__item-description">
@@ -31,9 +34,9 @@
           </p>
         </div>
       </div>
-      <div class="divider second"></div>
+      <div class="divider second" aria-hidden="true"></div>
       <div class="finding__item">
-        <span class="finding__item-number">03</span>
+        <span class="finding__item-number" aria-hidden="true">03</span>
         <div class="finding__item-text">
           <h3 class="finding__item-title">Speak to Our Team</h3>
           <p class="finding__item-description">
@@ -43,6 +46,6 @@
         </div>
       </div>
     </div>
-    <a href="#" class="finding__btn btn primary">Find Support</a>
+    <a href="#start" class="finding__btn btn primary">Find Support</a>
   </div>
 </section>

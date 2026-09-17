@@ -11,6 +11,7 @@ type PictureHelperHash = {
   alt?: string;
   class?: string;
   loading?: string;
+  fetchpriority?: string;
   width?: number | string;
   height?: number | string;
   sources?: PictureSource[];
@@ -55,6 +56,10 @@ export function pictureHelper(
 
   const className = hash.class != null ? ` class="${String(hash.class)}"` : '';
   const loading = hash.loading != null ? String(hash.loading) : 'lazy';
+  const fetchpriority =
+    hash.fetchpriority != null
+      ? ` fetchpriority="${String(hash.fetchpriority).replace(/"/g, '&quot;')}"`
+      : '';
   const width = hash.width != null ? ` width="${Number(hash.width)}"` : '';
   const height = hash.height != null ? ` height="${Number(hash.height)}"` : '';
   const sources = hash.sources || [];
@@ -88,7 +93,7 @@ export function pictureHelper(
     `<picture${className}>` +
     sourcesHtml +
     `<source srcset="${webpPath}" type="image/webp">` +
-    `<img src="${imgPath}" alt="${alt.replace(/"/g, '&quot;')}" loading="${loading}"${width}${height}>` +
+    `<img src="${imgPath}" alt="${alt.replace(/"/g, '&quot;')}" loading="${loading}"${fetchpriority}${width}${height}>` +
     `</picture>`;
 
   return new Handlebars.SafeString(html);

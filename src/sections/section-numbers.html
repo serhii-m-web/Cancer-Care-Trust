@@ -1,6 +1,6 @@
-<section class="numbers">
+<section class="numbers" id="numbers" aria-labelledby="numbers-title">
   <div class="container">
-    <h2 class="numbers__title">Cancer in the UK</h2>
+    <h2 class="numbers__title" id="numbers-title">Cancer in the UK</h2>
     <p class="numbers__description">
       Progress is being made. But as the number of people affected by cancer
       continues to grow, practical, financial and emotional support remains as
@@ -9,30 +9,33 @@
     <div class="numbers__inner">
       <div class="numbers__column-left">
         {{{picture "/images/numbers-img-1.png"
+        "Infographic illustrating cancer statistics in the UK"
         class="numbers__column-left-image"}}}
-        <span class="numbers__column-left-source"
-          >Source: Cancer Research UK, 2026</span
-        >
+        <p class="numbers__column-left-source">
+          Source: Cancer Research UK, 2026
+        </p>
       </div>
       <div class="numbers__column-right">
-        <div class="numbers__column-right-item">
-          <span class="numbers__column-right-item-number">Around 1,100</span>
-          <span class="numbers__column-right-item-description"
-            >people are diagnosed with cancer every day</span
-          >
-        </div>
-        <div class="numbers__column-right-item">
-          <span class="numbers__column-right-item-number">1 in 2</span>
-          <span class="numbers__column-right-item-description"
-            >people diagnosed with cancer survive for at least 10 years</span
-          >
-        </div>
-        <div class="numbers__column-right-item">
-          <span class="numbers__column-right-item-number">29% lower</span>
-          <span class="numbers__column-right-item-description"
-            >UK cancer death rates compared with their peak in 1989</span
-          >
-        </div>
+        <dl class="numbers__stats">
+          <div class="numbers__column-right-item">
+            <dt class="numbers__column-right-item-number">Around 1,100</dt>
+            <dd class="numbers__column-right-item-description">
+              people are diagnosed with cancer every day
+            </dd>
+          </div>
+          <div class="numbers__column-right-item">
+            <dt class="numbers__column-right-item-number">1 in 2</dt>
+            <dd class="numbers__column-right-item-description">
+              people diagnosed with cancer survive for at least 10 years
+            </dd>
+          </div>
+          <div class="numbers__column-right-item">
+            <dt class="numbers__column-right-item-number">29% lower</dt>
+            <dd class="numbers__column-right-item-description">
+              UK cancer death rates compared with their peak in 1989
+            </dd>
+          </div>
+        </dl>
       </div>
     </div>
   </div>

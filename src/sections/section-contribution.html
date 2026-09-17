@@ -1,8 +1,12 @@
-<section class="contribution">
+<section
+  class="contribution"
+  id="contribution"
+  aria-labelledby="contribution-title"
+>
   <div class="container">
     <div class="contribution__inner">
       <div class="contribution__content">
-        <h2 class="contribution__title">
+        <h2 class="contribution__title" id="contribution-title">
           Behind Every Contribution Is a Story
         </h2>
         <div class="contribution__description">
@@ -16,62 +20,66 @@
             services continue to matter.
           </p>
         </div>
-        <a href="#" class="contribution__btn btn secondary desktop-only"
+        <a href="#start" class="contribution__btn btn secondary desktop-only"
           >Read Our Stories {{icon "arrow-right"
           class="contribution__btn-icon"}}
         </a>
       </div>
-      <div class="contribution__image-grid">
-        <div class="contribution__image-grid-item">
-          {{picture "/images/contribution-img-1.png" "Contribution image 1"
+      <div
+        class="contribution__image-grid"
+        role="list"
+        aria-label="Stories and moments from people we support"
+      >
+        <div class="contribution__image-grid-item" role="listitem">
+          {{picture "/images/contribution-img-1.png" "Community member sharing their story"
           class="contribution__image-grid-item-image"}}
         </div>
-        <div class="contribution__image-grid-item">
-          {{picture "/images/contribution-img-2.png" "Contribution image 2"
+        <div class="contribution__image-grid-item" role="listitem">
+          {{picture "/images/contribution-img-2.png" "Family receiving practical support"
           class="contribution__image-grid-item-image"}}
         </div>
-        <div class="contribution__image-grid-item">
-          {{picture "/images/contribution-img-3.png" "Contribution image 3"
+        <div class="contribution__image-grid-item" role="listitem">
+          {{picture "/images/contribution-img-3.png" "Volunteer helping people affected by cancer"
           class="contribution__image-grid-item-image"}}
         </div>
-        <div class="contribution__image-grid-item">
-          {{picture "/images/contribution-img-4.png" "Contribution image 4"
+        <div class="contribution__image-grid-item" role="listitem">
+          {{picture "/images/contribution-img-4.png" "Person supported through treatment"
           class="contribution__image-grid-item-image"}}
         </div>
-        <div class="contribution__image-grid-item">
-          {{picture "/images/contribution-img-5.png" "Contribution image 5"
+        <div class="contribution__image-grid-item" role="listitem">
+          {{picture "/images/contribution-img-5.png" "Carer offering emotional support"
           class="contribution__image-grid-item-image"}}
         </div>
-        <div class="contribution__image-grid-item">
-          {{picture "/images/contribution-img-6.png" "Contribution image 6"
+        <div class="contribution__image-grid-item" role="listitem">
+          {{picture "/images/contribution-img-6.png" "Community fundraising moment"
           class="contribution__image-grid-item-image"}}
         </div>
-        <div class="contribution__image-grid-item">
-          {{picture "/images/contribution-img-7.png" "Contribution image 7"
+        <div class="contribution__image-grid-item" role="listitem">
+          {{picture "/images/contribution-img-7.png" "Support worker with a beneficiary"
           class="contribution__image-grid-item-image"}}
         </div>
-        <div class="contribution__image-grid-item">
-          {{picture "/images/contribution-img-8.png" "Contribution image 8"
+        <div class="contribution__image-grid-item" role="listitem">
+          {{picture "/images/contribution-img-8.png" "People connecting through shared experience"
           class="contribution__image-grid-item-image"}}
         </div>
-        <div class="contribution__image-grid-item">
-          {{picture "/images/contribution-img-9.png" "Contribution image 9"
+        <div class="contribution__image-grid-item" role="listitem">
+          {{picture "/images/contribution-img-9.png" "Quiet moment of care and reassurance"
           class="contribution__image-grid-item-image"}}
         </div>
-        <div class="contribution__image-grid-item">
-          {{picture "/images/contribution-img-10.png" "Contribution image 10"
+        <div class="contribution__image-grid-item" role="listitem">
+          {{picture "/images/contribution-img-10.png" "Team delivering local cancer support"
           class="contribution__image-grid-item-image"}}
         </div>
-        <div class="contribution__image-grid-item">
-          {{picture "/images/contribution-img-11.png" "Contribution image 11"
+        <div class="contribution__image-grid-item" role="listitem">
+          {{picture "/images/contribution-img-11.png" "Beneficiary looking ahead with hope"
           class="contribution__image-grid-item-image"}}
         </div>
-        <div class="contribution__image-grid-item">
-          {{picture "/images/contribution-img-12.png" "Contribution image 12"
+        <div class="contribution__image-grid-item" role="listitem">
+          {{picture "/images/contribution-img-12.png" "Supporters standing with people affected by cancer"
           class="contribution__image-grid-item-image"}}
         </div>
       </div>
-      <a href="#" class="contribution__btn btn secondary mobile-only"
+      <a href="#start" class="contribution__btn btn secondary mobile-only"
         >Read Our Stories {{icon "arrow-right" class="contribution__btn-icon"}}
       </a>
     </div>

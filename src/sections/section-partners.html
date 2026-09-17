@@ -1,15 +1,20 @@
-<section class="partners">
+<section class="partners" id="partners" aria-labelledby="partners-title">
   <div class="container">
     <div class="partners__inner">
       <div class="partners__image-block">
         <div class="partners__image-block-top">
-          {{picture "images/partners-img-1.png"
+          {{picture "/images/partners-img-1.png"
+          "Corporate partners supporting Cancer Care Trust"
           class="partners__image-block-image"}}
           <div class="partners__image-block-column">
-            {{picture "images/partners-line-1.png"
-            class="partners__image-block-line-1"}} {{picture
-            "images/partners-line-2.png" class="partners__image-block-line-2"}}
-            <span class="partners__image-block-column-label">15 years</span>
+            {{picture "/images/partners-line-1.png" alt=""
+            class="partners__image-block-line-1"}}
+            {{picture "/images/partners-line-2.png" alt=""
+            class="partners__image-block-line-2"}}
+            <p class="partners__image-block-column-label">
+              <span class="visually-hidden">Statistic:</span>
+              15 years
+            </p>
             <p class="partners__image-block-column-description">
               supporting people affected by cancer
             </p>
@@ -17,26 +22,32 @@
         </div>
         <div class="partners__image-block-bottom">
           <div class="partners__image-block-column">
-            {{picture "images/partners-line-3.png"
-            class="partners__image-block-line-3"}} {{picture
-            "images/partners-line-4.png" class="partners__image-block-line-4"}}
+            {{picture "/images/partners-line-3.png" alt=""
+            class="partners__image-block-line-3"}}
+            {{picture "/images/partners-line-4.png" alt=""
+            class="partners__image-block-line-4"}}
             <img
-              src="icons/heart.svg"
-              alt="image not found"
+              src="/icons/heart.svg"
+              alt=""
               class="partners__image-block-column-icon"
+              aria-hidden="true"
             />
-            <span class="partners__image-block-column-label">£XX,XXX+</span>
+            <p class="partners__image-block-column-label">
+              <span class="visually-hidden">Statistic:</span>
+              £XX,XXX+
+            </p>
             <p class="partners__image-block-column-description">
               provided in financial support
             </p>
           </div>
-          {{picture "images/partners-img-2.png"
+          {{picture "/images/partners-img-2.png"
+          "Business teams fundraising for cancer support"
           class="partners__image-block-image"}}
         </div>
       </div>
       <div class="partners__content">
-        <span class="partners__label section-label">PARTNER WITH US</span>
-        <h2 class="partners__title">
+        <p class="partners__label section-label">PARTNER WITH US</p>
+        <h2 class="partners__title" id="partners-title">
           Make Your Organisation Part of Something Meaningful
         </h2>
         <div class="partners__description">
@@ -51,7 +62,7 @@
             your organisation.
           </p>
         </div>
-        <a href="#" class="partners__btn btn secondary"
+        <a href="#start" class="partners__btn btn secondary"
           >Partner With Cancer Care Trust {{icon "arrow-right"
           class="partners__btn-icon"}}
         </a>

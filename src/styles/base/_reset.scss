@@ -18,6 +18,10 @@ body {
 	font-family: $base-font-sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+
+	&.is-scroll-locked {
+		overflow: hidden;
+	}
 }
 
 ::selection {

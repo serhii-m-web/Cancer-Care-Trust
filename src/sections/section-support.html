@@ -1,9 +1,11 @@
-<section class="support" id="support">
+<section class="support" id="support" aria-labelledby="support-title">
   <div class="container">
     <div class="support__inner">
       <div class="support__content">
-        <span class="support__label">WHO WE FUND</span>
-        <h2 class="support__title">Organisations We Support</h2>
+        <p class="support__label">WHO WE FUND</p>
+        <h2 class="support__title" id="support-title">
+          Organisations We Support
+        </h2>
         <p class="support__description">
           We fund organisations delivering specialist support, care and research
           across the cancer community. By supporting trusted organisations
@@ -11,19 +13,32 @@
           impact.
         </p>
         <div class="support__content-footer">
-          <span class="support__content-footer-count">25+</span>
+          <p class="support__content-footer-count">
+            <span class="visually-hidden">Statistic:</span>
+            25+
+          </p>
           <p class="support__content-footer-description">
             cancer organisations and projects supported
           </p>
         </div>
       </div>
-      <div class="support__slider swiper">
+      <div
+        class="support__slider swiper"
+        aria-roledescription="carousel"
+        aria-label="Organisations we support"
+      >
         <div class="swiper-wrapper">
           <div class="support__slide swiper-slide">
             {{{picture "/images/support-img-1.png"
+            "Support for people affected by pancreatic cancer"
             class="support__slide-image"}}}
-            <a href="#" target="_blank" class="support__slide-link">
+            <a
+              href="#support"
+              class="support__slide-link"
+              aria-label="Learn more about pancreatic cancer support partner"
+            >
               {{{picture "/images/support-logo-1.png"
+              "Partner organisation logo"
               class="support__slide-logo"}}}
             </a>
             <p class="support__slide-description">
@@ -33,9 +48,15 @@
           </div>
           <div class="support__slide swiper-slide">
             {{{picture "/images/support-img-2.png"
+            "Support focused on childhood brain tumour research"
             class="support__slide-image"}}}
-            <a href="#" target="_blank" class="support__slide-link">
+            <a
+              href="#support"
+              class="support__slide-link"
+              aria-label="Learn more about childhood brain tumour support partner"
+            >
               {{{picture "/images/support-logo-2.png"
+              "Partner organisation logo"
               class="support__slide-logo"}}}
             </a>
             <p class="support__slide-description">
@@ -45,9 +66,15 @@
           </div>
           <div class="support__slide swiper-slide">
             {{{picture "/images/support-img-1.png"
+            "Support for people affected by primary bone cancer"
             class="support__slide-image"}}}
-            <a href="#" target="_blank" class="support__slide-link">
+            <a
+              href="#support"
+              class="support__slide-link"
+              aria-label="Learn more about primary bone cancer support partner"
+            >
               {{{picture "/images/support-logo-3.png"
+              "Partner organisation logo"
               class="support__slide-logo"}}}
             </a>
             <p class="support__slide-description">
