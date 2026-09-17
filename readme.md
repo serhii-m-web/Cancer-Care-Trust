@@ -1,160 +1,141 @@
-## Vite Landing Template (TypeScript)
+# Cancer Care Trust
 
-Starter template for landing pages based on Vite with TypeScript, Handlebars templates, multi-page structure, and automatic WebP image conversion.
+Landing page for **Cancer Care Trust** — practical and financial support for people affected by cancer, and funding for organisations improving cancer care, support and research across the UK.
 
-### Features
+Built with Vite, TypeScript, Handlebars, and SCSS.
 
-- **Vite + TypeScript**: fast bundling, type checking, and smooth DX.
-- **Handlebars templates**: partials in `src/templates` and sections in `src/sections` for building pages from reusable blocks.
-- **Multi-page support**: all HTML files in `src` are automatically added as separate entry points.
-- **Automatic WebP conversion**: `sharp`-based script (`scripts/convertToWebp.ts`) processes images and generates WebP versions.
-- **`picture` helper**: convenient `<picture>` generation with WebP and fallback images directly in Handlebars templates.
-- **ESLint + Prettier**: ready-to-use linting and formatting setup.
-- **GitHub Pages ready**: uses relative `base` so it works in any repo path.
+## Stack
 
----
+- **Vite 4** — bundler and dev server (`base: './'`, GitHub Pages friendly)
+- **TypeScript** — app logic in `src/ts`
+- **Handlebars** — templates and page sections as partials
+- **SCSS** — styles with include-media breakpoints (desktop-first)
+- **Swiper** — mobile sliders (Help, Support)
+- **sharp** — automatic WebP conversion for images
 
-### Requirements
+## Requirements
 
-- **Node.js** v16+ (latest LTS recommended).
-- npm or another package manager (examples use npm).
+- Node.js 18+ (LTS recommended)
+- npm
 
----
-
-### Installation and usage
-
-1. **Install dependencies**
+## Getting started
 
 ```sh
 npm install
-```
-
-2. **Start development server**
-
-```sh
 npm run dev
 ```
 
-By default, the dev server:
+Dev server uses `src` as the root, opens the browser, and reloads on changes to templates, sections, styles, and scripts.
 
-- uses `src` as the project root;
-- automatically opens the browser;
-- picks up changes in templates, sections, and scripts with hot reload / full reload.
-
-3. **Build for production**
+### Production
 
 ```sh
-npm run build
+npm run build    # output → dist/
+npm run preview  # local preview of the build
 ```
 
-The build output will be generated in the `dist` directory.
+## Scripts
 
-4. **Preview production build locally**
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start Vite dev server |
+| `npm run build` | Production build into `dist/` |
+| `npm run preview` | Preview the production build |
+| `npm run typecheck` | TypeScript check (`tsc --noEmit`) |
+| `npm run lint` | ESLint |
+| `npm run lint:fix` | ESLint with auto-fix |
+| `npm run format` | Format with Prettier |
+| `npm run format:check` | Check Prettier formatting |
+| `npm run webp` | One-off PNG/JPG → WebP conversion |
+| `npm run webp:watch` | Watch mode for image conversion |
 
-```sh
-npm run preview
-```
-
----
-
-### Available npm scripts
-
-- **`npm run dev`**: start Vite dev server.
-- **`npm run build`**: build the project with Vite into `dist`.
-- **`npm run preview`**: run a local server to preview the built app.
-- **`npm run typecheck`**: run TypeScript compiler without emitting files.
-- **`npm run lint`**: run ESLint.
-- **`npm run lint:fix`**: run ESLint and auto-fix issues where possible.
-- **`npm run format`**: format the project with Prettier.
-- **`npm run format:check`**: check formatting with Prettier (CI-friendly).
-- **`npm run webp`**: one-off WebP conversion via `scripts/convertToWebp.ts`.
-- **`npm run webp:watch`**: watch mode for images, automatically converts on changes.
-
----
-
-### Project structure
-
-Approximate structure (may differ if you added/removed files):
-
-```text
-.
-├─ src/
-│  ├─ index.html         # Main page (primary entry point)
-│  ├─ *.html             # Additional pages (each becomes a separate entry)
-│  ├─ templates/         # Handlebars partials
-│  ├─ sections/          # Page sections / blocks
-│  ├─ js/                # TypeScript entry (e.g. main.ts)
-│  └─ styles/            # SCSS styles
-├─ public/               # Public files, copied as-is
-├─ scripts/
-│  └─ convertToWebp.ts   # Image to WebP conversion script
-├─ getHTMLFileNames.ts   # Helper for generating HTML entry list
-├─ vite.config.ts        # Vite + Handlebars configuration
-├─ tsconfig.json
-├─ package.json
-└─ readme.md
-```
-
----
-
-### Handlebars and helpers
-
-The project uses `vite-plugin-handlebars` with several useful helpers:
-
-- **`picture`**: generates a `<picture>` with WebP and `<img>` fallback.
-  - Parameters: `alt`, `class`, `loading`, `width`, `height`, `sources` (array of additional `<source>` with media conditions).
-- **`array`**: collects passed arguments into an array.
-- **`object`**: creates an object from Handlebars hash parameters.
-
-Example usage in a template (simplified):
-
-```hbs
-{{{picture "/img/hero.jpg" alt="Hero image" class="hero-image"}}}
-```
-
----
-
-### ESLint and Prettier in VS Code
-
-If you do not have a `.vscode/settings.json` file yet, create it with the following configuration:
-
-```json
-{
-  "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
-}
-```
-
-This will automatically format your code with Prettier on save.
-
----
-
-### Deploying to GitHub Pages
-
-`vite.config.ts` uses **`base: './'`**, so the build works from any subpath (including `https://<USERNAME>.github.io/<REPO>/`) without changing config.
-
-If you want to disable automatic WebP conversion (e.g. on CI), set:
+Disable WebP conversion (e.g. on CI):
 
 ```sh
 VITE_WEBP_CONVERT=false
 ```
 
-Typical deploy flow:
+## Project structure
 
-1. Build the project:
-
-```sh
-npm run build
+```text
+.
+├─ public/                 # Static assets (copied as-is)
+│  ├─ favicon/
+│  ├─ fonts/
+│  ├─ icons/
+│  ├─ images/
+│  └─ video/
+├─ scripts/
+│  ├─ convertToWebp.ts     # Image → WebP
+│  ├─ pictureHelper.ts     # Handlebars {{picture}} helper
+│  └─ iconHelper.ts        # Handlebars {{icon}} helper (SVG sprite)
+├─ src/
+│  ├─ index.html           # Main page
+│  ├─ sections/            # Page sections (Handlebars partials)
+│  ├─ templates/           # Shared partials (header, footer, sprite)
+│  ├─ styles/              # SCSS (base, layout, vendors)
+│  └─ ts/
+│     ├─ main.ts           # Entry
+│     └─ modules/          # Header burger, tabs, sliders, year
+├─ vite.config.ts
+├─ tsconfig.json
+└─ package.json
 ```
 
-2. Push the contents of `dist` to the `gh-pages` branch (manually or via GitHub Actions).
+### Page sections
 
-After that, GitHub Pages will serve your landing with the configured `base` path.
+Hero → Diagnosis → Help → Support → Numbers → Finding → Contribution → Partners → Start (CTA).
 
----
+## Handlebars helpers
 
-### License
+Configured in `vite.config.ts` via `vite-plugin-handlebars`.
+
+### `picture`
+
+Builds a `<picture>` with WebP source and fallback `<img>`.
+
+```hbs
+{{{picture "/images/hero-img.png" alt="Hero" class="hero__image" loading="eager"}}}
+```
+
+Useful options: `alt`, `class`, `loading`, `fetchpriority`, `width`, `height`, `sources`.
+
+### `icon`
+
+Renders an SVG from the sprite (`icons-sprite` partial) via `<use>`.
+
+```hbs
+{{icon "plus" class="site-header__donate-button-icon"}}
+```
+
+### `array` / `object`
+
+Helpers for passing structured data into partials from templates.
+
+## TypeScript modules
+
+| Module | Role |
+| --- | --- |
+| `header.ts` | Burger menu, scroll lock, Escape / link close |
+| `help-tabs.ts` | Accessible Help tabs (keyboard support) |
+| `help-slider.ts` | Help Swiper below desktop breakpoint |
+| `support-slider.ts` | Support logos Swiper |
+| `year.ts` | Current year in the footer |
+
+## Styles
+
+- Entry: `src/styles/main.scss`
+- Breakpoints (include-media): `tablet` 768px, `desktop` 1024px, etc.
+- Media queries are written **desktop-first** (`@include media('<desktop')`, …)
+- Prefer SCSS only; avoid inline styles in JS unless necessary
+
+## Deploy (GitHub Pages)
+
+`base: './'` keeps asset paths relative, so the site works under any repo subpath.
+
+1. `npm run build`
+2. Publish the contents of `dist/` (e.g. `gh-pages` branch or GitHub Actions)
+
+## License
 
 MIT
-
-**Free Software, Hell Yeah!**
