@@ -51,3 +51,12 @@
   max-width: 70ch;
   margin: 0 0 1.25rem;
 }
+
+.section-label {
+  display: block;
+  font-weight: 700;
+  @include adaptive-value('font-size', 16, 14, 1);
+  color: $color-red;
+  @include adaptive-value('margin-bottom', 16, 8, 1);
+  text-transform: uppercase;
+}
