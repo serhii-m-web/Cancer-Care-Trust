@@ -1,0 +1,189 @@
+.partners {
+  padding: 80px 0;
+
+  @include media('<tablet') {
+    padding: 40px 0;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    gap: 24px 32px;
+
+    @include media('<desktop') {
+      flex-direction: column;
+    }
+  }
+
+  &__image-block {
+    width: 49%;
+
+    @include media('<desktop') {
+      width: 100%;
+    }
+
+    &-top {
+      display: flex;
+      align-items: stretch;
+      gap: 4px;
+      margin-bottom: 4px;
+      min-height: 200px;
+
+      .partners__image-block-column {
+        background-color: $background-red;
+      }
+
+      .partners__image-block-column-label {
+        @include adaptive-value('font-size', 52, 36, 1);
+        @include adaptive-value('margin-bottom', 8, 4, 1);
+        line-height: 120%;
+        color: $color-white;
+      }
+
+      .partners__image-block-column-description {
+        color: $color-white;
+      }
+    }
+
+    &-bottom {
+      display: flex;
+      align-items: stretch;
+      gap: 4px;
+      min-height: 200px;
+
+      .partners__image-block-column {
+        background-color: $color-light-gray;
+      }
+
+      .partners__image-block-column-label {
+        @include adaptive-value('font-size', 48, 24, 1);
+        @include adaptive-value('margin-bottom', 8, 4, 1);
+        line-height: 120%;
+        color: $background-red;
+      }
+
+      .partners__image-block-column-description {
+        color: $background-red;
+      }
+    }
+
+    &-image {
+      display: inline-block;
+      width: 60%;
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &-column {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      width: 40%;
+      padding: 24px;
+      position: relative;
+
+      @include media('<tablet') {
+        padding: 12px;
+      }
+
+      &-icon {
+        width: 40px;
+        height: 40px;
+        @include adaptive-value('margin-bottom', 16, 8, 1);
+
+        @include media('<tablet') {
+          width: 32px;
+          height: 32px;
+        }
+      }
+
+      &-description {
+        @include adaptive-value('font-size', 18, 12, 1);
+      }
+    }
+
+    &-line-1 {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 60%;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &-line-2 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60%;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &-line-3 {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 40%;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &-line-4 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60%;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &__content {
+    width: 51%;
+
+    @include media('<desktop') {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    @include adaptive-value('font-size', 48, 28, 1);
+    @include adaptive-value('margin-bottom', 32, 24, 1);
+  }
+
+  &__description {
+    @include adaptive-value('margin-bottom', 48, 24, 1);
+
+    p {
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  &__btn {
+    @include media('<phone') {
+      width: 100%;
+    }
+  }
+}
