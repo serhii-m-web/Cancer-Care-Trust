@@ -1,0 +1,82 @@
+.hero {
+  background: linear-gradient(180deg, #fde3e4 0%, #f9f8ef 100%);
+
+  .container {
+    max-width: 1440px;
+    padding: 0;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: stretch;
+
+    @include media('<desktop') {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__content {
+    padding: 30px 32px 30px 40px;
+    width: 51%;
+
+    @include media('<desktop') {
+      width: 100%;
+      padding: 32px 16px;
+    }
+  }
+
+  &__title {
+    @include adaptive-value('margin-bottom', 32, 24, 1);
+  }
+
+  &__description {
+    @include adaptive-value('margin-bottom', 64, 24, 1);
+  }
+
+  &__image {
+    width: 49%;
+    min-height: 100%;
+
+    @include media('<desktop') {
+      width: 100%;
+      height: 550px;
+    }
+
+    @include media('<tablet') {
+      height: 390px;
+    }
+
+    @include media('<phone') {
+      height: 260px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      object-position: top;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 16px 24px;
+
+    @include media('<tablet') {
+      flex-direction: column;
+    }
+  }
+
+  &__btn {
+    &-icon {
+      width: 24px;
+      height: 24px;
+
+      @include media('<tablet') {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}

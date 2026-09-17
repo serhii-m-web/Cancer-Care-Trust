@@ -1,0 +1,53 @@
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+* {
+	max-height: 1000000px;
+}
+
+body {
+	color: $base-text-color;
+	background: $base-background-color;
+	font-family: $base-font-sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: rgba($base-text-color, 0.22);
+}
+
+:focus-visible {
+  outline: $focus-ring-width solid $base-text-color;
+  outline-offset: $focus-ring-offset;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+// adaptive images
+img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: top;
+}
+
+// google map fix
+.gm-style img {
+	max-width: none
+}

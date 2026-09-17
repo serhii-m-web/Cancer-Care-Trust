@@ -1,0 +1,35 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 24px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+
+  @include media('<desktop') {
+    padding: 10px 16px;
+  }
+
+  &.primary {
+    background: radial-gradient(
+      81.56% 131.25% at 50.32% 108.33%,
+      #c92027 0%,
+      #ee4363 100%
+    );
+    color: $color-white;
+  }
+
+  &.secondary {
+    border-color: $color-red;
+    color: $color-red;
+
+    &:hover {
+      background: $color-red;
+      color: $color-white;
+    }
+  }
+}

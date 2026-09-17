@@ -1,0 +1,154 @@
+.site-header {
+  padding: 5px 0;
+
+  @include media('<tablet') {
+    padding: 10px 0;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    @include media('<desktop') {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo-image {
+    width: 68px;
+    height: auto;
+
+    @include media('<tablet') {
+      width: 48px;
+    }
+  }
+
+  &__logo-text {
+    width: 70px;
+    height: auto;
+
+    @include media('<tablet') {
+      display: none;
+    }
+  }
+
+  &__nav {
+    display: block;
+    width: auto;
+    order: 0;
+
+    @include media('<desktop') {
+      display: none;
+      width: 100%;
+      order: 10;
+    }
+  }
+
+  // &.is-menu-open &__nav {
+  //   @include media('<desktop') {
+  //     display: block;
+  //   }
+  // }
+
+  &__nav-list {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @include media('<desktop') {
+      flex-direction: column;
+      gap: 16px;
+      padding: 8px 0 12px;
+    }
+  }
+
+  &__nav-item {
+    list-style: none;
+  }
+
+  &__nav-link {
+    text-decoration: none;
+    color: $color-dark-red;
+    font-size: 16px;
+    font-weight: 600;
+    transition: color $animation-speed;
+
+    &:hover {
+      color: $color-red;
+    }
+  }
+
+  &__donate-button {
+    @include media('<desktop') {
+      margin-left: auto;
+    }
+
+    @include media('<tablet') {
+      font-size: 14px;
+    }
+
+    &-icon {
+      width: 24px;
+      height: 24px;
+
+      @include media('<tablet') {
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+
+  &__burger-button {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-shrink: 0;
+    width: 24px;
+    height: 16px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+
+    @include media('<desktop') {
+      display: flex;
+    }
+
+    &:hover .site-header__burger-button-line {
+      background-color: $color-red;
+    }
+
+    &[aria-expanded='true'] .site-header__burger-button-line {
+      &:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+      }
+    }
+  }
+
+  &__burger-button-line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: $color-dark-red;
+    border-radius: 2px;
+    transition: $animation-speed;
+  }
+}

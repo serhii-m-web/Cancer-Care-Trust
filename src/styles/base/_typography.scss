@@ -1,0 +1,75 @@
+// Typography
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6,
+.h {
+  font-weight: bold;
+  margin: 0;
+  color: $color-red;
+}
+
+h1,
+.h1 {
+  @include adaptive-value('font-size', 68, 36, 1);
+  line-height: calc(74 / 68);
+}
+
+h2,
+.h2 {
+  font-size: $h2-font-size;
+}
+
+h3,
+.h3 {
+  font-size: $h3-font-size;
+}
+
+h4,
+.h4 {
+  font-size: $h4-font-size;
+}
+
+h5,
+.h5 {
+  font-size: $h5-font-size;
+}
+
+h6,
+.h6 {
+  font-size: $h6-font-size;
+}
+
+p {
+  font-weight: 500;
+  @include adaptive-value('font-size', 18, 16, 1);
+  line-height: 140%;
+  margin: 0;
+  color: $color-dark-red;
+}
+
+a {
+  color: $base-text-color;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+a:not([class]) {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: from-font;
+}

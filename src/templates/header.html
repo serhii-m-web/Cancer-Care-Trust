@@ -1,0 +1,47 @@
+<header class="site-header" id="header">
+  <div class="container">
+    <div class="site-header__inner">
+      <a class="site-header__logo" href="/">
+        {{{picture "/images/header-logo-image.png"
+        class="site-header__logo-image"}}} {{{picture
+        "/images/header-logo-text.png" class="site-header__logo-text"}}}
+      </a>
+      <nav class="site-header__nav" id="header-nav">
+        <ul class="site-header__nav-list">
+          <li class="site-header__nav-item">
+            <a class="site-header__nav-link" href="/">Home</a>
+          </li>
+          <li class="site-header__nav-item">
+            <a class="site-header__nav-link" href="/">About</a>
+          </li>
+          <li class="site-header__nav-item">
+            <a class="site-header__nav-link" href="/">What We Do</a>
+          </li>
+          <li class="site-header__nav-item">
+            <a class="site-header__nav-link" href="/">Support</a>
+          </li>
+          <li class="site-header__nav-item">
+            <a class="site-header__nav-link" href="/">News</a>
+          </li>
+          <li class="site-header__nav-item">
+            <a class="site-header__nav-link" href="/">Contact</a>
+          </li>
+        </ul>
+      </nav>
+      <a href="#" class="site-header__donate-button btn primary"
+        >Donate Today {{icon "plus" class="site-header__donate-button-icon"}}
+      </a>
+      <button
+        class="site-header__burger-button"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="header-nav"
+      >
+        <span class="site-header__burger-button-line"></span>
+        <span class="site-header__burger-button-line"></span>
+        <span class="site-header__burger-button-line"></span>
+      </button>
+    </div>
+  </div>
+</header>
