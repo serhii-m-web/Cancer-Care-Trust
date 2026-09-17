@@ -54,9 +54,16 @@
     width: 68%;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
+    grid-template-areas:
+      'a . b . c .'
+      '. d . e . f'
+      '. . g . h .'
+      '. i . j . k'
+      '. . l . . .';
 
     @include media('<desktop') {
       width: 100%;
+      grid-template-areas: none;
     }
 
     @include media('<tablet') {
@@ -69,11 +76,101 @@
     }
 
     &-item {
-      aspect-ratio: 1/1;
+      aspect-ratio: 1 / 1;
 
-      &.empty {
+      &:nth-child(1) {
+        grid-area: a;
+
         @include media('<desktop') {
-          display: none;
+          grid-area: auto;
+        }
+      }
+
+      &:nth-child(2) {
+        grid-area: b;
+
+        @include media('<desktop') {
+          grid-area: auto;
+        }
+      }
+
+      &:nth-child(3) {
+        grid-area: c;
+
+        @include media('<desktop') {
+          grid-area: auto;
+        }
+      }
+
+      &:nth-child(4) {
+        grid-area: d;
+
+        @include media('<desktop') {
+          grid-area: auto;
+        }
+      }
+
+      &:nth-child(5) {
+        grid-area: e;
+
+        @include media('<desktop') {
+          grid-area: auto;
+        }
+      }
+
+      &:nth-child(6) {
+        grid-area: f;
+
+        @include media('<desktop') {
+          grid-area: auto;
+        }
+      }
+
+      &:nth-child(7) {
+        grid-area: g;
+
+        @include media('<desktop') {
+          grid-area: auto;
+        }
+      }
+
+      &:nth-child(8) {
+        grid-area: h;
+
+        @include media('<desktop') {
+          grid-area: auto;
+        }
+      }
+
+      &:nth-child(9) {
+        grid-area: i;
+
+        @include media('<desktop') {
+          grid-area: auto;
+        }
+      }
+
+      &:nth-child(10) {
+        grid-area: j;
+
+        @include media('<desktop') {
+          grid-area: auto;
+        }
+      }
+
+      &:nth-child(11) {
+        grid-area: k;
+
+        @include media('<desktop') {
+          grid-area: auto;
+        }
+      }
+
+      &:nth-child(12) {
+        grid-area: l;
+
+        @include media('<desktop') {
+          grid-area: auto;
         }
       }
 
@@ -96,6 +193,7 @@
     @include media('<phone') {
       width: 100%;
     }
+
     &.desktop-only {
       @include media('<desktop') {
         display: none;
