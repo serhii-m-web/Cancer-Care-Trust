@@ -32,7 +32,8 @@ h2,
 
 h3,
 .h3 {
-  font-size: $h3-font-size;
+  @include adaptive-value('font-size', 24, 18, 1);
+  line-height: 130%;
 }
 
 h4,

@@ -1,4 +1,4 @@
-function initHeaderBurger(): void {
+export function initHeaderBurger(): void {
   const header = document.querySelector<HTMLElement>('.site-header');
   const burger = document.querySelector<HTMLButtonElement>(
     '.site-header__burger-button',
@@ -16,20 +16,3 @@ function initHeaderBurger(): void {
     header.classList.toggle('is-menu-open', !isOpen);
   });
 }
-
-function init(): void {
-  document.documentElement.classList.add('js');
-  initHeaderBurger();
-
-  const year = String(new Date().getFullYear());
-  document.querySelectorAll<HTMLElement>('[data-year]').forEach((el) => {
-    el.textContent = year;
-  });
-}
-
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', init, { once: true });
-} else {
-  init();
-}
-
