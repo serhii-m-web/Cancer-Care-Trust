@@ -13,6 +13,9 @@
   @include media('<desktop') {
     padding: 10px 16px;
   }
+  @include media('<380px') {
+    font-size: 15px;
+  }
 
   &.primary {
     background: radial-gradient(
