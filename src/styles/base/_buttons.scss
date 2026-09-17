@@ -23,6 +23,17 @@
     color: $color-white;
   }
 
+  &.primary-light {
+    background-color: $color-white;
+    color: $background-red;
+    border-color: $color-white;
+
+    &:hover {
+      background-color: $background-red;
+      color: $color-white;
+    }
+  }
+
   &.secondary {
     border-color: $color-red;
     color: $color-red;
@@ -30,6 +41,17 @@
     &:hover {
       background: $color-red;
       color: $color-white;
+    }
+  }
+
+  &.secondary-light {
+    background-color: transparent;
+    color: $color-white;
+    border-color: $color-white;
+
+    &:hover {
+      background-color: $color-white;
+      color: $background-red;
     }
   }
 }
