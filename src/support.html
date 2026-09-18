@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en" id="top">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <title>Cancer Care Trust</title>
+    <meta name="description"
+        content="Cancer Care Trust provides practical and financial support to people affected by cancer and funds organisations improving cancer care, support and research across the UK." />
+    <link rel="stylesheet" href="/styles/main.scss" />
+</head>
+
+<body>
+    {{> icons-sprite }}
+    <a class="skip-link visually-hidden" href="#main-content">Skip to content</a>
+    {{> header }}
+    <main id="main-content" tabindex="-1">
+        {{>section-hero
+        title="Every Contribution Supports People Affected by Cancer"
+        description="Cancer Care Trust depends on the support of people, families and organisations. Whether you donate, fundraise, give pre-loved clothes, remember us in your will or support us through your organisation, every contribution helps us continue supporting people affected by cancer."
+        primaryButtonHref="#"
+        primaryButtonText="Find Support"
+        secondaryButtonHref="#"
+        secondaryButtonText="Donate Today"
+        imageSrc="/images/support-main-img.png"
+        }}
+        {{>section-ways}}
+        {{>section-start
+            className="create"
+            title="Small Actions Can Create Meaningful Support"
+            paragraphs=(array
+            "There is no single way to support Cancer Care Trust."
+            "A donation, a bag of clothes, a fundraising event, a corporate initiative or a gift left in a will can all contribute to our ability to continue supporting people affected by cancer."
+            )
+            primaryButtonHref="#"
+            primaryButtonText="Support Cancer Care Trust Today"
+            hideSecondaryButton="true"
+        }}
+    </main>
+    {{> footer }}
+    <script type="module" src="/ts/main.ts"></script>
+</body>
+
+</html>

@@ -44,6 +44,7 @@
 
   &__image {
     width: 49%;
+    height: 750px;
     min-height: 100%;
 
     @include media('<desktop') {
@@ -63,8 +64,11 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: 80% 70%;
 
-      object-position: top;
+      @include media ("<desktop") {
+        object-position: top;
+      }
     }
   }
 

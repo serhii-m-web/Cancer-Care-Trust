@@ -5,6 +5,17 @@
     padding: 40px 0;
   }
 
+  &.create {
+    .start__content{
+      max-width: 700px;
+    }
+
+    .start__description{
+      max-width: 627px;
+      width: 100%;
+    }
+  }
+
   &__inner {
     background: linear-gradient(
       90.19deg,
