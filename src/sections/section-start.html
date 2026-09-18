@@ -33,14 +33,14 @@
         <div class="start__buttons">
           {{#unless hidePrimaryButton}}
             <a
-              href="{{#if primaryButtonHref}}{{primaryButtonHref}}{{else}}/contact.html#contact-block{{/if}}"
+              href="{{#if primaryButtonHref}}{{primaryButtonHref}}{{else}}contact.html#contact-block{{/if}}"
               class="start__btn btn primary-light"
               >{{#if primaryButtonText}}{{primaryButtonText}}{{else}}Donate Today{{/if}}
             </a>
           {{/unless}}
           {{#unless hideSecondaryButton}}
             <a
-              href="{{#if secondaryButtonHref}}{{secondaryButtonHref}}{{else}}/how-we-help.html{{/if}}"
+              href="{{#if secondaryButtonHref}}{{secondaryButtonHref}}{{else}}how-we-help.html{{/if}}"
               class="start__btn btn secondary-light"
               >{{#if secondaryButtonText}}{{secondaryButtonText}}{{else}}Get Support{{/if}}
               {{icon "arrow-right" class="start__btn-icon"}}

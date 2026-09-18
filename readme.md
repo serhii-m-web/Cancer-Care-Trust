@@ -168,10 +168,14 @@ Vite will include the new HTML file in the build automatically.
 
 ## Deploy
 
-`base: './'` keeps asset paths relative, so the site works from a repository subpath (for example GitHub Pages).
+The live site is served from a **project subpath**:
+
+`https://serhii-m-web.github.io/Cancer-Care-Trust/`
+
+`base: './'` keeps asset paths relative. Internal page links must stay **relative** (`contact.html`, not `/contact.html`) so they resolve under the repo path on GitHub Pages.
 
 1. `npm run build`
-2. Publish the contents of `dist/`
+2. Publish the contents of `dist/` (GitHub Actions deploys on push to `main`)
 
 ## License
 
