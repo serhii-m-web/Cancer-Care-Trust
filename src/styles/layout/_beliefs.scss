@@ -1,0 +1,87 @@
+.beliefs {
+  padding: 120px 0;
+
+  @include media('<tablet') {
+    padding: 40px 0;
+  }
+
+  &__wrapper {
+    @include media('<desktop') {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    align-items: stretch;
+    gap: 32px;
+
+    @include media('<desktop') {
+      display: contents;
+    }
+  }
+
+  &__images {
+    display: flex;
+    align-items: stretch;
+    gap: 4px;
+
+    @include media('<desktop') {
+      order: 3;
+      margin-bottom: 24px;
+    }
+
+    @include media('<phone') {
+      height: 200px;
+    }
+  }
+
+  &__image-1 {
+    flex: 0 0 50%;
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  &__image-2 {
+    flex: 0 0 50%;
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    @include media('<desktop') {
+      display: contents;
+    }
+  }
+
+  &__label {
+    @include media('<desktop') {
+      order: 1;
+    }
+  }
+
+  &__title {
+    @include adaptive-value('margin-bottom', 32, 24, 1);
+
+    @include media('<desktop') {
+      order: 2;
+    }
+  }
+
+  &__description {
+    @include media('<desktop') {
+      order: 4;
+    }
+    p {
+      @include adaptive-value('font-size', 18, 15, 1);
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+    }
+  }
+}
