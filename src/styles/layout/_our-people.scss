@@ -1,0 +1,69 @@
+.our-people {
+  padding: 120px 0;
+
+  @include media('<tablet') {
+    padding: 40px 0;
+  }
+
+  &__header {
+    text-align: center;
+  }
+
+  &__title {
+    @include adaptive-value('margin-bottom', 32, 16, 1);
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include adaptive-value('gap', 32, 24, 1);
+    @include adaptive-value('margin-top', 32, 24, 1);
+
+    @include media('<desktop') {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    @include media('<desktop') {
+      max-width: 350px;
+    }
+    &-image {
+      width: 100%;
+      height: 350px;
+
+      @include media('<tablet') {
+        height: 270px;
+      }
+
+      img {
+        object-fit: cover;
+      }
+    }
+
+    &:nth-child(2) {
+      .our-people__item-line {
+        bottom: auto;
+        top: 0;
+      }
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      row-gap: 16px;
+      position: relative;
+      background-color: $color-light-gray;
+      padding: 24px;
+    }
+
+    &-line {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 30%;
+      height: auto;
+    }
+  }
+}
