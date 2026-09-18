@@ -1,0 +1,49 @@
+.section-content {
+  padding: 120px 0;
+
+  @include media('<tablet') {
+    padding: 40px 0;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+
+    @include media ("<desktop") {
+        flex-direction: column;
+    }
+  }
+
+  &__title {
+    @include adaptive-value('font-size', 48, 28, 1);
+  }
+
+  &__layout {
+    max-width: 896px;
+    width: 100%;
+  }
+
+  &__description {
+    @include adaptive-value('margin-bottom', 48, 24, 1);
+
+    p {
+      @include adaptive-value('font-size', 24, 16, 1);
+
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+
+      b {
+        font-weight: 700;
+        color: $color-red;
+      }
+    }
+  }
+
+  &__btn {
+    @include media ("<phone") {
+        width: 100%;
+    }
+  }
+}
