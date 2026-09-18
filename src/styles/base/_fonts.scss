@@ -13,14 +13,8 @@
   }
 }
 
-// Add your font files into `public/fonts/` and enable includes below as needed.
-// Example:
-// @include font('MyFont', 'MyFont-Regular', 400, normal);
-
-@include font('Manrope', 'Manrope-ExtraLight', 200, normal);
-@include font('Manrope', 'Manrope-Light', 300, normal);
+// Used weights in the project: 400, 500, 600, 700
 @include font('Manrope', 'Manrope-Regular', 400, normal);
 @include font('Manrope', 'Manrope-Medium', 500, normal);
 @include font('Manrope', 'Manrope-SemiBold', 600, normal);
 @include font('Manrope', 'Manrope-Bold', 700, normal);
-@include font('Manrope', 'Manrope-ExtraBold', 800, normal);

@@ -1,0 +1,21 @@
+<section class="news-hero" id="news-hero" aria-labelledby="news-hero-title">
+  {{{picture "/images/contact-line.png" alt="" class="news-hero__line"}}}
+  <div class="container">
+    <div class="news-hero__inner">
+      <h1 class="news-hero__title" id="news-hero-title">
+        {{#if title}}{{title}}{{else}}News{{/if}}
+      </h1>
+      {{#if description}}
+        <p class="news-hero__description">{{description}}</p>
+      {{else}}
+        <p class="news-hero__description">
+          Updates from Cancer Care Trust — stories, announcements and practical
+          information for people affected by cancer, supporters and partners.
+        </p>
+      {{/if}}
+      {{#if meta}}
+        <p class="news-hero__meta">{{meta}}</p>
+      {{/if}}
+    </div>
+  </div>
+</section>

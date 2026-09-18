@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" id="top">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+  <link rel="manifest" href="/favicon/site.webmanifest" />
+  <title>Terms &amp; Conditions | Cancer Care Trust</title>
+  <meta name="description"
+    content="Read the Cancer Care Trust Terms &amp; Conditions for using our website and related services." />
+  <link rel="stylesheet" href="/styles/main.scss" />
+</head>
+
+<body>
+  {{> icons-sprite }}
+  <a class="skip-link visually-hidden" href="#main-content">Skip to content</a>
+  {{> header }}
+  <main id="main-content" tabindex="-1">
+    {{> section-news-hero
+    title="Terms & Conditions"
+    description="These terms set out the conditions for using the Cancer Care Trust website. The text below is a placeholder and will be replaced with the final version."
+    meta="Last updated: September 2026"
+    }}
+    {{> section-legal
+    title="Terms & Conditions"
+    paragraphs=(array
+    "This is placeholder text for the Cancer Care Trust Terms & Conditions. The full terms will be published here once they have been finalised."
+    "By using this website, you agree to follow these terms and any other policies referred to on this site, including our Privacy Policy."
+    "Placeholder content may cover topics such as permitted use of the website, accuracy of information, intellectual property, links to other sites, and limitations of liability."
+    "If you need clarification about these terms in the meantime, please contact Cancer Care Trust using the details on our Contact page."
+    )
+    }}
+  </main>
+  {{> footer }}
+  <script type="module" src="/ts/main.ts"></script>
+</body>
+
+</html>

@@ -25,12 +25,12 @@
         </div>
         <div class="contribution__actions desktop-only">
           {{#if showDonateButton}}
-          <a href="{{#if donateButtonHref}}{{donateButtonHref}}{{else}}#start{{/if}}"
+          <a href="{{#if donateButtonHref}}{{donateButtonHref}}{{else}}/contact.html#contact-block{{/if}}"
             class="contribution__btn btn primary">{{#if donateButtonText}}{{donateButtonText}}{{else}}Donate
             Today{{/if}}
           </a>
           {{/if}}
-          <a href="{{#if buttonHref}}{{buttonHref}}{{else}}#start{{/if}}" class="contribution__btn btn secondary">{{#if
+          <a href="{{#if buttonHref}}{{buttonHref}}{{else}}/about.html{{/if}}" class="contribution__btn btn secondary">{{#if
             buttonText}}{{buttonText}}{{else}}Read Our Stories{{/if}}
             {{icon "arrow-right" class="contribution__btn-icon"}}
           </a>
@@ -97,11 +97,11 @@
       </div>
       <div class="contribution__actions mobile-only">
         {{#if showDonateButton}}
-        <a href="{{#if donateButtonHref}}{{donateButtonHref}}{{else}}#start{{/if}}"
+        <a href="{{#if donateButtonHref}}{{donateButtonHref}}{{else}}/contact.html#contact-block{{/if}}"
           class="contribution__btn btn primary">{{#if donateButtonText}}{{donateButtonText}}{{else}}Donate Today{{/if}}
         </a>
         {{/if}}
-        <a href="{{#if buttonHref}}{{buttonHref}}{{else}}#start{{/if}}" class="contribution__btn btn secondary">{{#if
+        <a href="{{#if buttonHref}}{{buttonHref}}{{else}}/about.html{{/if}}" class="contribution__btn btn secondary">{{#if
           buttonText}}{{buttonText}}{{else}}Read Our Stories{{/if}}
           {{icon "arrow-right" class="contribution__btn-icon"}}
         </a>

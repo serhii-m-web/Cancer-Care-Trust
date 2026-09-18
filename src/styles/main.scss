@@ -25,7 +25,6 @@ $media-expressions: (
 
 @import 'base/adaptive';
 @import 'base/fonts';
-@import 'base/functions';
 @import 'base/variables';
 @import 'base/mixins';
 @import 'base/helpers';
@@ -52,5 +51,7 @@ $media-expressions: (
 @import 'layout/how';
 @import 'layout/ways';
 @import 'layout/contact';
+@import 'layout/news';
+@import 'layout/legal';
 @import 'layout/common';
 @import 'layout/footer';

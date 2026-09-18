@@ -1,0 +1,24 @@
+<section class="legal" id="legal" aria-labelledby="legal-title">
+  <div class="container">
+    <div class="legal__inner">
+      <h2 class="visually-hidden" id="legal-title">
+        {{#if title}}{{title}}{{else}}Legal information{{/if}}
+      </h2>
+      <div class="legal__content">
+        {{#if paragraphs}}
+          {{#each paragraphs}}
+            <p>{{this}}</p>
+          {{/each}}
+        {{else}}
+          <p>
+            This page contains placeholder text. The full legal content will be
+            provided and published here shortly.
+          </p>
+        {{/if}}
+      </div>
+      <a href="/contact.html" class="legal__link btn secondary">
+        Contact Us {{icon "arrow-right" class="legal__link-icon"}}
+      </a>
+    </div>
+  </div>
+</section>

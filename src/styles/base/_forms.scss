@@ -1,8 +1,8 @@
 // forms
 form,
 fieldset {
-	margin: 0;
-	border-style: none;
+  margin: 0;
+  border-style: none;
 }
 
 input[type='text'],
@@ -10,38 +10,72 @@ input[type='tel'],
 input[type='email'],
 input[type='search'],
 input[type='password'],
-//input[type='url'],
-// input[type='date'],
 textarea {
-	-webkit-appearance: none;
-	-webkit-border-radius: 0;
-	outline: none;
-	box-sizing: border-box;
-	border: 1px solid rgba($base-text-color, 0.3);
-	color: $base-text-color;
-	font-family: $base-font-sans-serif;
-	// &:hover {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  outline: none;
+  box-sizing: border-box;
+  border: 1px solid rgba($base-text-color, 0.3);
+  color: $base-text-color;
+  font-family: $base-font-sans-serif;
+  background-color: $color-white;
+  transition:
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    box-shadow 0.25s ease,
+    color 0.25s ease;
 
-	// }
+  @include placeholder {
+    color: rgba($base-text-color, 0.45);
+  }
 
-	&:focus {
-		border-color: $base-text-color;
-	}
+  &:hover:not(:disabled):not(:focus):not(:focus-visible) {
+    border-color: rgba($color-red, 0.55);
+  }
 
-	@include placeholder {
-		color: rgba($base-text-color, 0.45);
-	}
+  &:focus,
+  &:focus-visible {
+    border-color: $color-red;
+    box-shadow: 0 0 0 3px rgba($color-red, 0.18);
+    outline: none;
+  }
+
+  &:disabled,
+  &[aria-disabled='true'] {
+    border-color: rgba($base-text-color, 0.15);
+    background-color: rgba($color-light-gray, 0.85);
+    color: rgba($base-text-color, 0.45);
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+
+  &:user-invalid,
+  &[aria-invalid='true'] {
+    border-color: $background-red;
+
+    &:focus,
+    &:focus-visible {
+      box-shadow: 0 0 0 3px rgba($background-red, 0.2);
+    }
+  }
+
+  &:user-valid:not(:placeholder-shown) {
+    border-color: #2f7a4b;
+
+    &:focus,
+    &:focus-visible {
+      box-shadow: 0 0 0 3px rgba(47, 122, 75, 0.18);
+    }
+  }
 }
-
-input[attribute="value"] {}
 
 select {
-	-webkit-border-radius: 0;
+  -webkit-border-radius: 0;
 }
 
 textarea {
-	vertical-align: top;
-	resize: none;
+  vertical-align: top;
+  resize: none;
 }
 
 button,
@@ -49,10 +83,8 @@ input[type='button'],
 input[type='reset'],
 input[type='file'],
 input[type='submit'] {
-	-webkit-appearance: none;
-	-webkit-border-radius: 0;
-	cursor: pointer;
-	font-family: $base-font-sans-serif;
-
-	&:hover {}
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  cursor: pointer;
+  font-family: $base-font-sans-serif;
 }
