@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" id="top">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <title>Cancer Care Trust</title>
+    <meta name="description"
+        content="Cancer Care Trust provides practical and financial support to people affected by cancer and funds organisations improving cancer care, support and research across the UK." />
+    <link rel="stylesheet" href="/styles/main.scss" />
+</head>
+
+<body>
+    {{> icons-sprite }}
+    <a class="skip-link visually-hidden" href="#main-content">Skip to content</a>
+    {{> header }}
+    <main id="main-content" tabindex="-1">
+        {{>section-about-main}}
+    </main>
+    {{> footer }}
+    <script type="module" src="/ts/main.ts"></script>
+</body>
+
+</html>
