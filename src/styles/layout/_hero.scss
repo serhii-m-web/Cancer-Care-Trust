@@ -34,6 +34,12 @@
 
   &__description {
     @include adaptive-value('margin-bottom', 64, 24, 1);
+
+    p {
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+    }
   }
 
   &__image {

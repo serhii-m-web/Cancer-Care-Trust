@@ -1,24 +1,62 @@
-<section class="hero" id="hero" aria-labelledby="hero-title">
+<section
+  class="hero{{#if className}} {{className}}{{/if}}"
+  id="{{#if id}}{{id}}{{else}}hero{{/if}}"
+  aria-labelledby="{{#if titleId}}{{titleId}}{{else}}hero-title{{/if}}"
+>
   <div class="container">
     <div class="hero__inner">
       <div class="hero__content">
-        <h1 class="hero__title" id="hero-title">
-          Practical Support. <br />Financial Help. <br />
-          Better Days Ahead.
+        <h1
+          class="hero__title"
+          id="{{#if titleId}}{{titleId}}{{else}}hero-title{{/if}}"
+        >
+          {{#if title}}
+            {{{title}}}
+          {{else}}
+            Practical Support. <br />Financial Help. <br />
+            Better Days Ahead.
+          {{/if}}
         </h1>
-        <p class="hero__description">
-          Cancer Care Trust provides practical and financial support to people
-          affected by cancer and funds organisations working to improve cancer
-          care, support and research across the UK.
-        </p>
+        {{#if paragraphs}}
+          <div class="hero__description">
+            {{#each paragraphs}}
+              <p>{{this}}</p>
+            {{/each}}
+          </div>
+        {{else}}
+          <p class="hero__description">
+            {{#if description}}
+              {{description}}
+            {{else}}
+              Cancer Care Trust provides practical and financial support to people
+              affected by cancer and funds organisations working to improve cancer
+              care, support and research across the UK.
+            {{/if}}
+          </p>
+        {{/if}}
         <div class="hero__actions">
-          <a class="hero__btn btn primary" href="#start">Donate Today</a>
-          <a class="hero__btn btn secondary" href="#finding"
-            >Get Support {{icon "arrow-right" class="hero__btn-icon"}}
-          </a>
+          {{#unless hidePrimaryButton}}
+            <a
+              class="hero__btn btn primary"
+              href="{{#if primaryButtonHref}}{{primaryButtonHref}}{{else}}#start{{/if}}"
+              >{{#if primaryButtonText}}{{primaryButtonText}}{{else}}Donate Today{{/if}}
+            </a>
+          {{/unless}}
+          {{#unless hideSecondaryButton}}
+            <a
+              class="hero__btn btn secondary"
+              href="{{#if secondaryButtonHref}}{{secondaryButtonHref}}{{else}}#finding{{/if}}"
+              >{{#if secondaryButtonText}}{{secondaryButtonText}}{{else}}Get Support{{/if}}
+              {{icon "arrow-right" class="hero__btn-icon"}}
+            </a>
+          {{/unless}}
         </div>
       </div>
-      {{picture "/images/hero-img.png" "Person receiving support from Cancer Care Trust" class="hero__image" loading="eager" fetchpriority="high"}}
+      {{#if imageSrc}}
+        {{{picture imageSrc imageAlt class="hero__image" loading="eager" fetchpriority="high"}}}
+      {{else}}
+        {{{picture "/images/hero-img.png" "Person receiving support from Cancer Care Trust" class="hero__image" loading="eager" fetchpriority="high"}}}
+      {{/if}}
     </div>
   </div>
 </section>
