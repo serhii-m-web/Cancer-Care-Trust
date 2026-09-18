@@ -1,9 +1,192 @@
 .site-footer {
-  padding: 2rem 0;
-  border-top: 1px solid rgba($base-text-color, 0.12);
-  background: rgba($base-background-color, 0.65);
-}
+  padding: 24px 0;
+  background-color: $color-light-gray;
+  color: $color-dark-red;
 
-.site-footer small {
-  color: rgba($base-text-color, 0.72);
+  &__top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 24px;
+
+    @include media('<desktop') {
+      flex-direction: column;
+      gap: 32px;
+    }
+  }
+
+  &__brand {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 432px;
+    width: 100%;
+  }
+
+  &__logo {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+  }
+
+  &__logo-image {
+    width: 97px;
+    height: auto;
+
+    @include media('<tablet') {
+      width: 68px;
+    }
+  }
+
+  &__logo-text {
+    width: 80px;
+    height: auto;
+
+    @include media('<tablet') {
+      width: 70px;
+    }
+  }
+
+  &__brand-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__heading {
+    margin: 0;
+    color: $color-red;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.4;
+
+    @include media('<tablet') {
+      font-size: 20px;
+    }
+  }
+
+  &__description,
+  &__mission {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  &__registration {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+
+    @include media('<tablet') {
+      font-size: 14px;
+    }
+  }
+
+  &__regulator {
+    display: block;
+    width: 140px;
+    height: auto;
+    margin: 8px 0 0;
+  }
+
+  &__nav {
+    display: flex;
+    gap: 24px;
+    flex-shrink: 0;
+
+    @include media('<tablet') {
+      width: 100%;
+      justify-content: space-between;
+      gap: 16px;
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    min-width: 120px;
+
+    @include media('<tablet') {
+      gap: 16px;
+      min-width: 0;
+      flex: 1;
+    }
+  }
+
+  &__nav-item {
+    list-style: none;
+  }
+
+  &__nav-link {
+    color: $color-dark-red;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.4;
+    text-decoration: none;
+    transition: color $animation-speed;
+
+    &:hover {
+      color: $color-red;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-top: 24px;
+    border-top: 1px solid rgba($color-dark-red, 0.2);
+
+    @include media('<tablet') {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+  }
+
+  &__copyright {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+
+  &__legal {
+    display: flex;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @include media('<tablet') {
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__legal-item {
+    list-style: none;
+  }
+
+  &__legal-link {
+    color: $color-dark-red;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.16px;
+    text-decoration: none;
+    transition: color $animation-speed;
+
+    &:hover {
+      color: $color-red;
+    }
+  }
 }
