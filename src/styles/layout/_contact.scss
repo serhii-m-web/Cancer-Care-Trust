@@ -1,0 +1,209 @@
+.contact-hero {
+  position: relative;
+  background-color: $color-light-gray;
+  @include adaptive-value('padding-top', 120, 32, 1);
+  @include adaptive-value('padding-bottom', 80, 40, 1);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #fde3e4 0%, #f9f8ef 100%);
+    z-index: 1;
+  }
+
+  &__line {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30%;
+    height: auto;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  &__inner {
+    max-width: 780px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__title {
+    @include adaptive-value('margin-bottom', 32, 24, 1);
+  }
+
+  &__description {
+    margin-bottom: 16px;
+  }
+
+  &__discaimer {
+    font-weight: 700;
+    @include adaptive-value('font-size', 24, 16, 1);
+    color: $color-dark-red;
+
+    span {
+      color: $color-red;
+    }
+  }
+}
+
+.contact-block {
+  padding: 50px 0 90px 0;
+  background-color: $color-light-gray;
+
+  &__inner {
+    display: flex;
+    align-items: stretch;
+    gap: 40px 32px;
+
+    @include media('<desktop') {
+      flex-direction: column;
+    }
+  }
+
+  &__form-wrapper {
+    width: 70%;
+    background-color: $color-white;
+    padding: 32px;
+
+    @include media('<desktop') {
+      padding: 24px 16px;
+      width: 100%;
+    }
+  }
+
+  &__title {
+    @include adaptive-value('font-size', 32, 28, 1);
+    @include adaptive-value('margin-bottom', 32, 24, 1);
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    label {
+      font-size: 14px;
+      font-weight: 700;
+      color: $color-dark-red;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 17px 20px;
+      border: 1px solid #e0d8d0;
+
+      @include placeholder {
+        color: #b09fa0;
+        font-size: 16px;
+      }
+    }
+
+    textarea {
+      height: 140px;
+    }
+
+    &-button {
+      width: max-content;
+      margin-left: auto;
+    }
+  }
+
+  &__sidebar {
+    width: 430px;
+    background-color: $color-white;
+    padding: 32px;
+
+    @include media('<desktop') {
+      padding: 24px 16px;
+      width: 100%;
+    }
+
+    &-title {
+      @include adaptive-value('font-size', 32, 28, 1);
+      @include adaptive-value('margin-bottom', 32, 24, 1);
+    }
+
+    &-items {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    &-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+
+      &-icon {
+        min-width: 40px;
+        min-height: 40px;
+        max-height: 40px;
+        max-width: 40px;
+      }
+
+      &-title {
+        font-size: 16px;
+        color: $color-dark-red;
+        margin-bottom: 4px;
+      }
+
+      &-description {
+        font-size: 15px;
+      }
+
+      &-link {
+        font-size: 16px;
+        color: $color-red;
+        font-weight: 600;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: $color-dark-red;
+        }
+      }
+    }
+
+    &-map {
+      width: 100%;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+      @include adaptive-value('margin-top', 32, 24, 1);
+      background: linear-gradient(135deg, #fde3e4 0%, #f5e8e9 100%);
+      padding: 20px;
+
+      &-icon {
+        min-width: 48px;
+        min-height: 48px;
+        max-height: 48px;
+        max-width: 48px;
+      }
+
+      &-title {
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      &-link {
+        text-decoration: underline;
+        color: $background-red;
+        font-weight: 700;
+      }
+    }
+  }
+}
