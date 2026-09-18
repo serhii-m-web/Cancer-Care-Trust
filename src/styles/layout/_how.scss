@@ -1,0 +1,150 @@
+.how {
+  position: relative;
+  overflow: hidden;
+  background-color: $color-light-gray;
+  padding: 120px 0 80px;
+
+  @include media('<desktop') {
+    padding: 80px 0 64px;
+  }
+
+  @include media('<tablet') {
+    padding: 40px 0;
+  }
+
+  &__line {
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+
+    &--top {
+      top: 0;
+      right: 0;
+      width: 30%;
+      height: auto;
+    }
+
+    &--bottom {
+      bottom: 0;
+      left: 0;
+      width: 23%;
+      height: auto;
+    }
+  }
+
+  &__photos {
+    @include media('<desktop') {
+      display: grid;
+      grid-template-areas:
+        'a . b'
+        '. c .';
+        width: max-content;
+        margin:24px auto 0 auto;
+    }
+  }
+
+  &__photo {
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+
+    @include media('<desktop') {
+      position: static;
+      aspect-ratio: 1/1;
+      width: 110px !important;
+      height: 110px !important;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-position: top;
+      object-fit: cover;
+    }
+
+    &--top-left {
+      top: 57px;
+      @include adaptive-value('left', 40, 0, 1);
+      width: 100px;
+      height: 100px;
+
+      @include media('<desktop') {
+        display: none;
+      }
+    }
+
+    &--top-right {
+      top: 85px;
+      @include adaptive-value('top', 85, -200, 1);
+      @include adaptive-value('right', 81, -200, 1);
+      width: 140px;
+      height: 140px;
+
+      @include media('<desktop') {
+        grid-area: a;
+      }
+    }
+
+    &--bottom-left {
+      @include adaptive-value('bottom', 46, 0, 1);
+      @include adaptive-value('left', 157, -250, 1);
+      width: 140px;
+      height: 140px;
+
+      @include media('<desktop') {
+        grid-area: b;
+      }
+    }
+
+    &--bottom-right {
+      bottom: 72px;
+      @include adaptive-value('right', 374, -250, 1);
+      width: 100px;
+      height: 100px;
+
+      @include media('<desktop') {
+        grid-area: c;
+      }
+    }
+  }
+
+  &__inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 896px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  &__title {
+    @include adaptive-value('font-size', 56, 32, 1);
+    line-height: 1.3;
+    @include adaptive-value('margin-bottom', 32, 24, 1);
+  }
+
+  &__description {
+    @include adaptive-value('margin-bottom', 64, 32, 1);
+
+    p {
+      &:not(:last-child) {
+        margin-bottom: 16px;
+
+        @include media('<phone') {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  &__btn {
+    min-width: 209px;
+
+    @include media('<phone') {
+      width: 100%;
+      min-width: 0;
+    }
+  }
+}
