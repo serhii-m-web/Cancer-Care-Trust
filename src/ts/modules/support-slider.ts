@@ -49,26 +49,28 @@ function createSupportSlider(element: HTMLElement): Swiper {
 }
 
 export function initSupportSlider(): void {
-  const slider = document.querySelector<HTMLElement>('.support__slider');
+  const sliders = document.querySelectorAll<HTMLElement>('.support__slider');
 
-  if (!slider) {
+  if (!sliders.length) {
     return;
   }
 
-  const instance = createSupportSlider(slider);
+  sliders.forEach((slider) => {
+    const instance = createSupportSlider(slider);
+    const images = slider.querySelectorAll('img');
 
-  const images = slider.querySelectorAll('img');
-  images.forEach((image) => {
-    if (image.complete) {
-      return;
-    }
+    images.forEach((image) => {
+      if (image.complete) {
+        return;
+      }
 
-    image.addEventListener(
-      'load',
-      () => {
-        instance.update();
-      },
-      { once: true },
-    );
+      image.addEventListener(
+        'load',
+        () => {
+          instance.update();
+        },
+        { once: true },
+      );
+    });
   });
 }

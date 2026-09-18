@@ -30,6 +30,54 @@
     }
   }
 
+  &.need {
+    background-color: $color-white;
+
+    .support__title{
+      color: $color-red;
+      max-width: 370px;
+      width: 100%;
+      @include adaptive-value("font-size", 56, 28, 1);
+    }
+
+    .support__description{
+      max-width: 375px;
+      width: 100%;
+      color: $color-dark-red;
+    }
+
+    .support__slide {
+      background-color: $color-light-gray;
+    }
+
+    .support__slide-image{
+      height: 320px;
+
+      @include media ("<phone") {
+        height: 180px;
+      }
+    }
+
+    .support__pagination .swiper-pagination-bullet{
+      background-color: $color-red;
+    }
+
+    .support__btn{
+
+      &.desktop-only{
+        @include media ("<tablet") {
+          display: none;
+        }
+      }
+
+      &.mobile-only{
+        @include media (">=tablet") {
+          display: none;
+        }
+      }
+    }
+  }
+
   &__inner {
     display: flex;
     align-items: center;

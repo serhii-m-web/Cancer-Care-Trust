@@ -21,7 +21,8 @@
     <main id="main-content" tabindex="-1">
         {{>section-hero
         title="Cancer Affects More Than Your Health"
-        description="Being diagnosed with cancer can feel overwhelming. You may be worried about what happens next, how treatment will affect your everyday life, or what it may mean for your family and future."
+        description="Being diagnosed with cancer can feel overwhelming. You may be worried about what happens next, how
+        treatment will affect your everyday life, or what it may mean for your family and future."
         primaryButtonHref="#"
         primaryButtonText="Find Support"
         secondaryButtonHref="#"
@@ -30,6 +31,39 @@
         }}
         {{>section-facing}}
         {{>section-how}}
+        {{>section-beliefs
+        title="You Are More Than Cancer"
+        paragraphs=(array
+        "You are first and foremost a person with a life to be lived. Cancer is only one part of that life."
+        "Having the right information, practical tools and support can help you manage the impact cancer may have across
+        different areas of your life."
+        "There are free services available that are designed to help people live better with cancer, treatment and its
+        side effects."
+        )
+        primaryButtonHref="#"
+        primaryButtonText="Find Support"
+        secondaryButtonHref="#"
+        secondaryButtonText="Donate Today"
+        image1Src="/images/beliefs-image-3.png"
+        image1Alt="Beliefs image 1"
+        image2Src="/images/beliefs-image-4.png"
+        image2Alt="Beliefs image 2"
+        }}
+        {{>section-need}}
+        {{>section-start
+        id="alone"
+        title="You Don’t Have to Find Everything Alone"
+        paragraphs=(array
+        "The right support can help make living with cancer a little easier to manage."
+        "Whether you need someone to talk to, help finding the right service, information about managing everyday life
+        or support with financial pressures, Cancer Care Trust can help you understand where to turn next."
+        )
+        imageSrc="/images/alone-img.png"
+        imageAlt="People looking ahead with hope and support"
+        primaryButtonHref="#"
+        primaryButtonText="Contact Cancer Care Trust"
+        hideSecondaryButton=true
+        }}
     </main>
     {{> footer }}
     <script type="module" src="/ts/main.ts"></script>

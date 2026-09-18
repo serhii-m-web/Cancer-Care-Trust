@@ -54,6 +54,10 @@
   }
 
   &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
     @include media('<desktop') {
       display: contents;
     }
@@ -81,6 +85,28 @@
       @include adaptive-value('font-size', 18, 15, 1);
       &:not(:last-child) {
         margin-bottom: 16px;
+      }
+    }
+  }
+
+  &__btn {
+    @include adaptive-value('margin-top', 32, 24, 1);
+
+    @include media('<desktop') {
+      order: 5;
+    }
+
+    @include media('<phone') {
+      width: 100%;
+    }
+
+    &-icon {
+      width: 24px;
+      height: 24px;
+
+      @include media('<tablet') {
+        width: 20px;
+        height: 20px;
       }
     }
   }
