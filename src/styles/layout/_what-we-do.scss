@@ -1,0 +1,111 @@
+.what-we-do {
+  padding: 80px 0;
+  background-color: $color-light-gray;
+  position: relative;
+
+  @include media('<tablet') {
+    padding: 40px 0;
+  }
+
+  &__line-1 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30%;
+    height: auto;
+
+    @include media('<tablet') {
+      display: none;
+    }
+  }
+
+  &__line-2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30%;
+    height: auto;
+
+    @include media('<tablet') {
+      display: none;
+    }
+  }
+
+  &__header {
+    text-align: center;
+    max-width: 780px;
+    width: 100%;
+    margin: 0 auto;
+    @include adaptive-value('margin-bottom', 64, 24, 1);
+  }
+
+  &__title {
+    @include adaptive-value('margin-bottom', 32, 24, 1);
+  }
+
+  &__description {
+    @include adaptive-value('margin-bottom', 64, 24, 1);
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px 32px;
+    align-items: center;
+    @include adaptive-value('column-gap', 32, 0, 1);
+    @include adaptive-value('margin-bottom', 64, 40, 1);
+
+    @include media('<desktop') {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  &__item {
+    background-color: $background-red;
+    padding: 24px;
+
+    &-icon {
+      width: 64px;
+      height: 64px;
+      @include adaptive-value('margin-bottom', 24, 16, 1);
+
+      @include media('<tablet') {
+        width: 52px;
+        height: 52px;
+      }
+    }
+
+    &-title {
+      color: $color-white;
+      @include adaptive-value('font-size', 24, 20, 1);
+      margin-bottom: 8px;
+    }
+
+    &-description {
+      &-1 {
+        color: $color-white;
+        @include adaptive-value('margin-bottom', 16, 12, 1);
+      }
+
+      &-2 {
+        color: $color-white;
+      }
+    }
+  }
+
+  &__btn {
+    display: flex;
+    margin: 0 auto;
+    width: max-content;
+
+    @include media('<phone') {
+      width: 100%;
+    }
+  }
+}

@@ -97,6 +97,7 @@
   }
 
   &__title {
+    @include adaptive-value('font-size', 40, 28, 1);
     @include adaptive-value('margin-bottom', 32, 16, 1);
   }
 
