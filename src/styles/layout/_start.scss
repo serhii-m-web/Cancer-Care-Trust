@@ -40,6 +40,14 @@
   &__description {
     color: $color-white;
     @include adaptive-value('margin-bottom', 40, 24, 1);
+
+    p {
+      color: $color-white;
+
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+    }
   }
 
   &__buttons {

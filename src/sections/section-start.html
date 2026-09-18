@@ -1,29 +1,65 @@
-<section class="start" id="start" aria-labelledby="start-title">
+<section
+  class="start{{#if className}} {{className}}{{/if}}"
+  id="{{#if id}}{{id}}{{else}}start{{/if}}"
+  aria-labelledby="{{#if titleId}}{{titleId}}{{else}}start-title{{/if}}"
+>
   <div class="container">
     <div class="start__inner">
       <div class="start__content">
-        <h2 class="start__title" id="start-title">
-          Better Days Ahead Start With Support
+        <h2
+          class="start__title"
+          id="{{#if titleId}}{{titleId}}{{else}}start-title{{/if}}"
+        >
+          {{#if title}}{{title}}{{else}}Better Days Ahead Start With Support{{/if}}
         </h2>
-        <p class="start__description">
-          Cancer changes lives. Together, we can help make some of the
-          challenges it brings a little easier. Whether you need support or want
-          to help someone else receive it, Cancer Care Trust is here to make a
-          meaningful difference.
-        </p>
+        {{#if paragraphs}}
+          <div class="start__description">
+            {{#each paragraphs}}
+              <p>{{this}}</p>
+            {{/each}}
+          </div>
+        {{else}}
+          <p class="start__description">
+            {{#if description}}
+              {{description}}
+            {{else}}
+              Cancer changes lives. Together, we can help make some of the
+              challenges it brings a little easier. Whether you need support or want
+              to help someone else receive it, Cancer Care Trust is here to make a
+              meaningful difference.
+            {{/if}}
+          </p>
+        {{/if}}
         <div class="start__buttons">
-          <a href="#finding" class="start__btn btn primary-light"
-            >Donate Today</a
-          >
-          <a href="#finding" class="start__btn btn secondary-light"
-            >Get Support {{icon "arrow-right" class="start__btn-icon"}}
-          </a>
+          {{#unless hidePrimaryButton}}
+            <a
+              href="{{#if primaryButtonHref}}{{primaryButtonHref}}{{else}}#finding{{/if}}"
+              class="start__btn btn primary-light"
+              >{{#if primaryButtonText}}{{primaryButtonText}}{{else}}Donate Today{{/if}}
+            </a>
+          {{/unless}}
+          {{#unless hideSecondaryButton}}
+            <a
+              href="{{#if secondaryButtonHref}}{{secondaryButtonHref}}{{else}}#finding{{/if}}"
+              class="start__btn btn secondary-light"
+              >{{#if secondaryButtonText}}{{secondaryButtonText}}{{else}}Get Support{{/if}}
+              {{icon "arrow-right" class="start__btn-icon"}}
+            </a>
+          {{/unless}}
         </div>
       </div>
-      {{picture "/images/start-img.png"
-      "People looking ahead with hope and support"
-      class="start__image"}}
-      {{picture "/images/start-line.png" alt="" class="start__line"}}
+      {{#if imageSrc}}
+        {{{picture imageSrc imageAlt class="start__image"}}}
+      {{else}}
+        {{{picture "/images/start-img.png" "People looking ahead with hope and support" class="start__image"}}}
+      {{/if}}
+      {{#unless hideLine}}
+        {{#if lineSrc}}
+          {{{picture lineSrc alt="" class="start__line"}}}
+        {{else}}
+          {{{picture "/images/start-line.png" alt="" class="start__line"}}}
+        {{/if}}
+      {{/unless}}
     </div>
   </div>
 </section>
