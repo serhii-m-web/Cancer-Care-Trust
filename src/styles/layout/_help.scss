@@ -174,7 +174,7 @@
       flex-grow: 1;
       padding: 24px;
       background-color: $color-light-gray;
-      min-height: 290px;
+      min-height: 270px;
 
       @include media('<desktop') {
         min-height: 220px;

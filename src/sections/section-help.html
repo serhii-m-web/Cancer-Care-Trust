@@ -2,30 +2,14 @@
   <div class="container">
     <div class="help__inner">
       <div class="help__buttons" role="tablist" aria-label="Help sections">
-        <button
-          class="help__button is-active"
-          type="button"
-          role="tab"
-          id="help-tab-we"
-          aria-selected="true"
-          aria-controls="help-panel-we"
-          tabindex="0"
-          data-title="How We Help"
-          data-description="Our work is focused on providing meaningful support where it can make a real difference."
-        >
+        <button class="help__button is-active" type="button" role="tab" id="help-tab-we" aria-selected="true"
+          aria-controls="help-panel-we" tabindex="0" data-title="How We Help"
+          data-description="Our work is focused on providing meaningful support where it can make a real difference.">
           How We Help
         </button>
-        <button
-          class="help__button"
-          type="button"
-          role="tab"
-          id="help-tab-you"
-          aria-selected="false"
-          aria-controls="help-panel-you"
-          tabindex="-1"
-          data-title="How You Can Help"
-          data-description="There are many ways to get involved and help us support people affected by cancer."
-        >
+        <button class="help__button" type="button" role="tab" id="help-tab-you" aria-selected="false"
+          aria-controls="help-panel-you" tabindex="-1" data-title="How You Can Help"
+          data-description="Whether you donate, give pre-loved clothes or partner with us as a business, your support helps Cancer Care Trust continue its work.">
           How You Can Help
         </button>
       </div>
@@ -37,12 +21,7 @@
     </div>
   </div>
   <div class="help__panels">
-    <div
-      class="help__panel is-active"
-      id="help-panel-we"
-      role="tabpanel"
-      aria-labelledby="help-tab-we"
-    >
+    <div class="help__panel is-active" id="help-panel-we" role="tabpanel" aria-labelledby="help-tab-we">
       <div class="help__content swiper">
         <div class="swiper-wrapper">
           <div class="help__content-item swiper-slide">
@@ -57,9 +36,7 @@
                 financial and practical pressures that may arise during and
                 after treatment.
               </p>
-              <a href="#finding" class="help__content-item-link btn primary"
-                >Get Support</a
-              >
+              <a href="#finding" class="help__content-item-link btn primary">Get Support</a>
             </div>
           </div>
           <div class="help__content-item swiper-slide">
@@ -73,9 +50,7 @@
                 We support charities and organisations delivering specialist
                 care, services and research for people affected by cancer.
               </p>
-              <a href="#support" class="help__content-item-link btn primary"
-                >See Who We Support</a
-              >
+              <a href="#support" class="help__content-item-link btn primary">See Who We Support</a>
             </div>
           </div>
           <div class="help__content-item swiper-slide">
@@ -90,27 +65,17 @@
                 strengthen the wider network of care and support available to
                 people affected by cancer.
               </p>
-              <a href="#numbers" class="help__content-item-link btn primary"
-                >See Our Impact</a
-              >
+              <a href="#numbers" class="help__content-item-link btn primary">See Our Impact</a>
             </div>
           </div>
         </div>
         <div class="help__navigation">
           <div class="swiper-pagination help__pagination"></div>
           <div class="btn-nav-group">
-            <button
-              class="btn-nav btn-nav--prev"
-              type="button"
-              aria-label="Previous slide"
-            >
+            <button class="btn-nav btn-nav--prev" type="button" aria-label="Previous slide">
               {{icon "arrow-right" class="btn-nav__icon"}}
             </button>
-            <button
-              class="btn-nav btn-nav--next"
-              type="button"
-              aria-label="Next slide"
-            >
+            <button class="btn-nav btn-nav--next" type="button" aria-label="Next slide">
               {{icon "arrow-right" class="btn-nav__icon"}}
             </button>
           </div>
@@ -118,74 +83,53 @@
       </div>
     </div>
 
-    <div
-      class="help__panel"
-      id="help-panel-you"
-      role="tabpanel"
-      aria-labelledby="help-tab-you"
-      hidden
-    >
+    <div class="help__panel" id="help-panel-you" role="tabpanel" aria-labelledby="help-tab-you" hidden>
       <div class="help__content swiper">
         <div class="swiper-wrapper">
           <div class="help__content-item swiper-slide">
-            {{{picture "/images/help-1.png" "Donation supporting cancer care"
+            {{{picture "/images/help-4.png" "Donation supporting cancer care"
             class="help__content-item-image"}}}
             <div class="help__content-item-inner">
-              <h3 class="help__content-item-title">Donate</h3>
+              <h3 class="help__content-item-title">Donate Money</h3>
               <p class="help__content-item-description">
-                Your donation helps us provide practical and financial support
-                to people affected by cancer and fund organisations improving
-                cancer care.
+                Help us continue providing practical and financial support to people affected by cancer and funding
+                important work across the cancer community.
               </p>
-              <a href="#start" class="help__content-item-link btn primary"
-                >Donate Today</a
-              >
+              <a href="#start" class="help__content-item-link btn primary">Donate Today</a>
             </div>
           </div>
           <div class="help__content-item swiper-slide">
-            {{{picture "/images/help-2.png" "Community fundraising for cancer support"
+            {{{picture "/images/help-5.png" "Community fundraising for cancer support"
             class="help__content-item-image"}}}
             <div class="help__content-item-inner">
-              <h3 class="help__content-item-title">Fundraise</h3>
+              <h3 class="help__content-item-title">Donate Clothes</h3>
               <p class="help__content-item-description">
-                Organise an event, challenge or community activity to raise
-                funds and help more people get the support they need.
+                Give pre-loved clothes, shoes and household textiles another life while helping raise funds for our
+                work.
               </p>
-              <a href="#partners" class="help__content-item-link btn primary"
-                >Start Fundraising</a
-              >
+              <a href="#partners" class="help__content-item-link btn primary">Start Fundraising</a>
             </div>
           </div>
           <div class="help__content-item swiper-slide">
-            {{{picture "/images/help-3.png" "Partnership to extend cancer support"
+            {{{picture "/images/help-6.png" "Partnership to extend cancer support"
             class="help__content-item-image"}}}
             <div class="help__content-item-inner">
-              <h3 class="help__content-item-title">Partner With Us</h3>
+              <h3 class="help__content-item-title">Corporate Partnerships</h3>
               <p class="help__content-item-description">
-                Work with Cancer Care Trust to extend support across communities
-                and strengthen services for people affected by cancer.
+                Bring your organisation and employees together to create meaningful social impact with Cancer Care
+                Trust.
               </p>
-              <a href="#partners" class="help__content-item-link btn primary"
-                >Get Involved</a
-              >
+              <a href="#partners" class="help__content-item-link btn primary">Get Involved</a>
             </div>
           </div>
         </div>
         <div class="help__navigation">
           <div class="swiper-pagination help__pagination"></div>
           <div class="btn-nav-group">
-            <button
-              class="btn-nav btn-nav--prev"
-              type="button"
-              aria-label="Previous slide"
-            >
+            <button class="btn-nav btn-nav--prev" type="button" aria-label="Previous slide">
               {{icon "arrow-right" class="btn-nav__icon"}}
             </button>
-            <button
-              class="btn-nav btn-nav--next"
-              type="button"
-              aria-label="Next slide"
-            >
+            <button class="btn-nav btn-nav--next" type="button" aria-label="Next slide">
               {{icon "arrow-right" class="btn-nav__icon"}}
             </button>
           </div>
