@@ -23,6 +23,35 @@
         {{>section-content}}
         {{>section-what-we-do}}
         {{>section-beliefs}}
+        {{> section-contribution
+        className="contribution--about"
+        id="further"
+        titleId="further-title"
+        title="Helping Support Go Further"
+        imagesLabel="Stories and moments from people we support"
+        paragraphs=(array
+        "Cancer Care Trust is a self-funding registered charity. Alongside providing direct financial support, we donate
+        to selected cancer charities and work with Clothes Relief, which collects unwanted good-quality clothing, shoes
+        and accessories to help raise funds for our work."
+        "These different forms of support help us continue assisting people affected by cancer and contributing to
+        organisations carrying out important work."
+        )
+        buttonHref="#further"
+        buttonText="Donate Clothes"
+        showDonateButton=true
+        donateButtonHref="#start"
+        images=(array
+        (object src="/images/contribution-img-2.png" alt="Family receiving practical support")
+        (object src="/images/contribution-img-3.png" alt="Family receiving practical support")
+        (object src="/images/contribution-img-4.png" alt="Family receiving practical support")
+        (object src="/images/contribution-img-5.png" alt="Family receiving practical support")
+        (object src="/images/contribution-img-6.png" alt="Family receiving practical support")
+        (object src="/images/contribution-img-7.png" alt="Family receiving practical support")
+        (object src="/images/contribution-img-8.png" alt="Family receiving practical support")
+        (object src="/images/contribution-img-9.png" alt="Family receiving practical support")
+        (object src="/images/contribution-img-10.png" alt="Family receiving practical support")
+        )
+        }}
     </main>
     {{> footer }}
     <script type="module" src="/ts/main.ts"></script>
