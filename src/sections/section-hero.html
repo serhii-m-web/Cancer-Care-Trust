@@ -5,7 +5,7 @@
 >
   <div class="container">
     <div class="hero__inner">
-      <div class="hero__content">
+      <div class="hero__content" data-animate="fade-up">
         <h1
           class="hero__title"
           id="{{#if titleId}}{{titleId}}{{else}}hero-title{{/if}}"
@@ -34,7 +34,7 @@
             {{/if}}
           </p>
         {{/if}}
-        <div class="hero__actions">
+        <div class="hero__actions" data-animate="fade-up" data-animate-delay="120">
           {{#unless hidePrimaryButton}}
             <a
               class="hero__btn btn primary"

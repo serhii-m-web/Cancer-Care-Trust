@@ -5,7 +5,7 @@
 >
   <div class="container">
     <div class="start__inner">
-      <div class="start__content">
+      <div class="start__content" data-animate="fade-up">
         <h2
           class="start__title"
           id="{{#if titleId}}{{titleId}}{{else}}start-title{{/if}}"
@@ -30,7 +30,7 @@
             {{/if}}
           </p>
         {{/if}}
-        <div class="start__buttons">
+        <div class="start__buttons" data-animate="fade-up" data-animate-delay="120">
           {{#unless hidePrimaryButton}}
             <a
               href="{{#if primaryButtonHref}}{{primaryButtonHref}}{{else}}contact.html#contact-block{{/if}}"

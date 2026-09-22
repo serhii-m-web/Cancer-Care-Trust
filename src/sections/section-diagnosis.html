@@ -1,10 +1,10 @@
 <section class="diagnosis" id="diagnosis" aria-labelledby="diagnosis-title">
   <div class="container">
     <div class="diagnosis__inner">
-      <div class="diagnosis__image-content">
+      <div class="diagnosis__image-content" data-animate="fade-right">
         {{picture "/images/diagnosis-img.png" "People affected by cancer receiving care and support"
         class="diagnosis__image"}}
-        <div class="diagnosis__column">
+        <div class="diagnosis__column" data-animate="scale" data-animate-delay="150">
           <img
             src="icons/icon_1.svg"
             alt=""
@@ -20,7 +20,7 @@
           </p>
         </div>
       </div>
-      <div class="diagnosis__content">
+      <div class="diagnosis__content" data-animate="fade-left" data-animate-delay="100">
         <h2 class="diagnosis__title" id="diagnosis-title">
           More Than a Diagnosis
         </h2>

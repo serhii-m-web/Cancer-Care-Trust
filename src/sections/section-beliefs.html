@@ -7,7 +7,7 @@
     <div class="beliefs__wrapper">
       <div class="beliefs__inner">
         {{#unless hideImages}}
-          <div class="beliefs__images">
+          <div class="beliefs__images" data-animate="fade-right">
             {{#if image1Src}}
               {{{picture image1Src image1Alt class="beliefs__image-1"}}}
             {{else}}
@@ -20,7 +20,7 @@
             {{/if}}
           </div>
         {{/unless}}
-        <div class="beliefs__content">
+        <div class="beliefs__content" data-animate="fade-left" data-animate-delay="100">
           {{#unless hideLabel}}
             <span class="beliefs__label section-label"
               >{{#if label}}{{label}}{{/if}}

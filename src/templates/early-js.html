@@ -1,0 +1,17 @@
+<script>
+  document.documentElement.classList.add('js');
+</script>
+<style>
+  /* Initial state before main CSS loads — prevents flash of final layout on reload */
+  html.js [data-animate]:not(.is-inview) {
+    opacity: 0;
+    transform: translate3d(0, 28px, 0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html.js [data-animate]:not(.is-inview) {
+      opacity: 1;
+      transform: none;
+    }
+  }
+</style>

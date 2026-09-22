@@ -2,7 +2,7 @@
   aria-labelledby="{{#if titleId}}{{titleId}}{{else}}contribution-title{{/if}}">
   <div class="container">
     <div class="contribution__inner">
-      <div class="contribution__content">
+      <div class="contribution__content" data-animate="fade-right">
         <h2 class="contribution__title" id="{{#if titleId}}{{titleId}}{{else}}contribution-title{{/if}}">
           {{#if title}}{{title}}{{else}}Behind Every Contribution Is a Story{{/if}}
         </h2>
@@ -37,7 +37,8 @@
         </div>
       </div>
       <div class="contribution__image-grid" role="list"
-        aria-label="{{#if imagesLabel}}{{imagesLabel}}{{else}}Stories and moments from people we support{{/if}}">
+        aria-label="{{#if imagesLabel}}{{imagesLabel}}{{else}}Stories and moments from people we support{{/if}}"
+        data-animate="scale" data-animate-delay="120">
         {{#if images}}
         {{#each images}}
         <div class="contribution__image-grid-item" role="listitem">

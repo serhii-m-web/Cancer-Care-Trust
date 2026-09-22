@@ -1,13 +1,13 @@
 <section class="numbers" id="numbers" aria-labelledby="numbers-title">
   <div class="container">
-    <h2 class="numbers__title" id="numbers-title">Cancer in the UK</h2>
-    <p class="numbers__description">
+    <h2 class="numbers__title" id="numbers-title" data-animate="fade-up">Cancer in the UK</h2>
+    <p class="numbers__description" data-animate="fade-up" data-animate-delay="80">
       Progress is being made. But as the number of people affected by cancer
       continues to grow, practical, financial and emotional support remains as
       important as ever.
     </p>
     <div class="numbers__inner">
-      <div class="numbers__column-left">
+      <div class="numbers__column-left" data-animate="fade-right">
         {{{picture "/images/numbers-img-1.png"
         "Infographic illustrating cancer statistics in the UK"
         class="numbers__column-left-image"}}}
@@ -16,20 +16,20 @@
         </p>
       </div>
       <div class="numbers__column-right">
-        <dl class="numbers__stats">
-          <div class="numbers__column-right-item">
+        <dl class="numbers__stats" data-animate-stagger="120">
+          <div class="numbers__column-right-item" data-animate="fade-up">
             <dt class="numbers__column-right-item-number">Around 1,100</dt>
             <dd class="numbers__column-right-item-description">
               people are diagnosed with cancer every day
             </dd>
           </div>
-          <div class="numbers__column-right-item">
+          <div class="numbers__column-right-item" data-animate="fade-up">
             <dt class="numbers__column-right-item-number">1 in 2</dt>
             <dd class="numbers__column-right-item-description">
               people diagnosed with cancer survive for at least 10 years
             </dd>
           </div>
-          <div class="numbers__column-right-item">
+          <div class="numbers__column-right-item" data-animate="fade-up">
             <dt class="numbers__column-right-item-number">29% lower</dt>
             <dd class="numbers__column-right-item-description">
               UK cancer death rates compared with their peak in 1989
