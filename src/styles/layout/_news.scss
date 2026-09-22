@@ -64,10 +64,6 @@
     @include adaptive-value('margin-bottom', 16, 12, 1);
   }
 
-  &__intro {
-    color: $color-dark-red;
-  }
-
   &__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -155,32 +151,75 @@
 }
 
 .news-article {
-  padding: 80px 0 100px;
+  position: relative;
   background-color: $color-white;
+  @include adaptive-value('padding-top', 120, 32, 1);
+  @include adaptive-value('padding-bottom', 100, 60, 1);
 
-  @include media('<tablet') {
-    padding: 40px 0 60px;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 36%;
+    min-height: 260px;
+    background: linear-gradient(180deg, #fde3e4 0%, #f9f8ef 70%, $color-white 100%);
+    z-index: 1;
+    pointer-events: none;
+
+    @include media('<tablet') {
+      height: 30%;
+      min-height: 200px;
+    }
   }
 
-  &__layout {
-    display: grid;
-    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-    gap: 48px 56px;
-    align-items: start;
+  &__line {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30%;
+    height: auto;
+    z-index: 2;
+    pointer-events: none;
+  }
 
-    @include media('<desktop') {
-      grid-template-columns: 1fr;
-      gap: 32px;
-    }
+  &__inner {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__header {
+    max-width: 900px;
+    @include adaptive-value('margin-bottom', 40, 24, 1);
+  }
+
+  &__title {
+    @include adaptive-value('margin-bottom', 24, 16, 1);
+  }
+
+  &__description {
+    margin-bottom: 16px;
+  }
+
+  &__meta {
+    font-weight: 700;
+    @include adaptive-value('font-size', 18, 15, 1);
+    color: $color-dark-red;
+  }
+
+  &__media {
+    @include adaptive-value('margin-bottom', 40, 24, 1);
   }
 
   &__image {
     display: block;
     width: 100%;
-    height: 480px;
+    max-width: 600px;
+    height: 420px;
 
     @include media('<tablet') {
-      height: 280px;
+      height: 260px;
     }
 
     img {
@@ -190,14 +229,49 @@
     }
   }
 
+  // CMS / WordPress content block
   &__content {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    max-width: 640px;
+    @include adaptive-value('margin-bottom', 40, 28, 1);
 
-    p {
-      @include adaptive-value('font-size', 18, 16, 1);
+    h2,
+    h3,
+    h4 {
+      margin-top: 12px;
+    }
+
+    ul,
+    ol {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding-left: 1.25em;
+      margin: 0;
+    }
+
+    a {
+      color: $color-red;
+      text-decoration: underline;
+      text-underline-offset: 0.12em;
+
+      &:hover,
+      &:focus-visible {
+        color: $background-red;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    blockquote {
+      margin: 0;
+      padding: 16px 20px;
+      border-left: 4px solid $color-red;
+      background-color: $color-light-gray;
     }
   }
 
@@ -205,7 +279,6 @@
     display: flex;
     flex-wrap: wrap;
     gap: 12px 16px;
-    @include adaptive-value('margin-top', 24, 12, 1);
 
     @include media('<phone') {
       flex-direction: column;

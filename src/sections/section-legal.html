@@ -1,11 +1,24 @@
 <section class="legal" id="legal" aria-labelledby="legal-title">
+  {{{picture "/images/contact-line.png" alt="" class="legal__line"}}}
   <div class="container">
     <div class="legal__inner" data-animate="fade-up">
-      <h2 class="visually-hidden" id="legal-title">
-        {{#if title}}{{title}}{{else}}Legal information{{/if}}
-      </h2>
+      <header class="legal__header">
+        <h1 class="legal__title" id="legal-title">
+          {{#if title}}{{title}}{{else}}Legal{{/if}}
+        </h1>
+        {{#if description}}
+          <p class="legal__description">{{description}}</p>
+        {{/if}}
+        {{#if meta}}
+          <p class="legal__meta">{{meta}}</p>
+        {{/if}}
+      </header>
+
+      {{! Main editable area for WordPress / CMS content }}
       <div class="legal__content">
-        {{#if paragraphs}}
+        {{#if content}}
+          {{{content}}}
+        {{else if paragraphs}}
           {{#each paragraphs}}
             <p>{{this}}</p>
           {{/each}}
@@ -16,9 +29,13 @@
           </p>
         {{/if}}
       </div>
-      <a href="contact.html" class="legal__link btn secondary">
-        Contact Us {{icon "arrow-right" class="legal__link-icon"}}
-      </a>
+
+      {{#unless hideContactLink}}
+        <a href="contact.html" class="legal__link btn secondary">
+          {{#if contactLinkText}}{{contactLinkText}}{{else}}Contact Us{{/if}}
+          {{icon "arrow-right" class="legal__link-icon"}}
+        </a>
+      {{/unless}}
     </div>
   </div>
 </section>

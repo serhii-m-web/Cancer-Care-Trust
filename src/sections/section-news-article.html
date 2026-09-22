@@ -1,57 +1,129 @@
 <section class="news-article" id="news-article" aria-labelledby="news-article-title">
+  {{{picture "/images/contact-line.png" alt="" class="news-article__line"}}}
   <div class="container">
-    <div class="news-article__layout">
-      <div class="news-article__media" data-animate="fade-right">
-        {{{picture
-          "/images/contribution-img-2.png"
-          "Family receiving practical support during cancer treatment"
-          class="news-article__image"
-          loading="eager"
-        }}}
+    <div class="news-article__inner" data-animate="fade-up">
+      <header class="news-article__header">
+        <h1 class="news-article__title" id="news-article-title">
+          {{#if title}}{{title}}{{else}}News article{{/if}}
+        </h1>
+        {{#if description}}
+          <p class="news-article__description">{{description}}</p>
+        {{/if}}
+        {{#if meta}}
+          <p class="news-article__meta">{{meta}}</p>
+        {{/if}}
+      </header>
+
+      {{#if imageSrc}}
+        <div class="news-article__media">
+          {{{picture imageSrc imageAlt class="news-article__image" loading="eager"}}}
+        </div>
+      {{else}}
+        <div class="news-article__media">
+          {{{picture
+            "/images/contribution-img-2.png"
+            "Family receiving practical support during cancer treatment"
+            class="news-article__image"
+            loading="eager"
+          }}}
+        </div>
+      {{/if}}
+
+      {{! Main editable area for WordPress / CMS content }}
+      <div class="news-article__content">
+        {{#if content}}
+          {{{content}}}
+        {{else if paragraphs}}
+          {{#each paragraphs}}
+            <p>{{this}}</p>
+          {{/each}}
+        {{else}}
+          {{! Demo CMS markup — preview of common WordPress content tags }}
+          <p>
+            A cancer diagnosis can change daily life almost overnight. Alongside
+            medical appointments and treatment decisions, many people face new
+            financial pressures, practical challenges at home, and uncertainty
+            about where to turn for help.
+          </p>
+
+          <h2>How practical support helps</h2>
+          <p>
+            Cancer Care Trust works to ease some of those pressures by providing
+            <strong>practical and financial support</strong> to people affected
+            by cancer, and by funding organisations that improve cancer care,
+            support and research across the UK.
+          </p>
+          <p>
+            For families, even <em>small forms of support</em> can make a
+            meaningful difference — help with unexpected costs, guidance on
+            available services, or simply knowing there is somewhere to ask for
+            advice without judgement. You can also
+            <a href="contact.html#contact-block">get in touch with our team</a>
+            if you are unsure where to start.
+          </p>
+
+          <h3>What support can include</h3>
+          <ul>
+            <li>Help with unexpected everyday costs during treatment</li>
+            <li>Guidance on local and national support services</li>
+            <li>Signposting to specialist organisations and advice lines</li>
+            <li>Practical tools that reduce stress at home and at work</li>
+          </ul>
+
+          <h3>Steps many people take first</h3>
+          <ol>
+            <li>Speak with someone who understands cancer-related pressures</li>
+            <li>Review what practical help is already available locally</li>
+            <li>Ask about financial support options that may apply to you</li>
+            <li>Share needs with carers, family or trusted friends</li>
+          </ol>
+
+          <blockquote>
+            We believe support should consider the whole person. Cancer is only
+            one part of someone’s life, and the right information and practical
+            tools can help people manage its impact across emotional, financial
+            and everyday circumstances.
+          </blockquote>
+
+          <h4>Looking ahead together</h4>
+          <p>
+            If you or someone you care about needs support, or if you would like
+            to help others receive it, our team is here to listen and guide you
+            towards the next step. Read more on our
+            <a href="news.html">News</a> page or explore
+            <a href="how-we-help.html">How We Help</a>.
+          </p>
+
+          <img
+            src="images/contribution-img-6.png"
+            alt="Community fundraising supporting people affected by cancer"
+            width="800"
+            height="450"
+            loading="lazy"
+          />
+          <p>
+            From local bake sales to challenge events, supporters across the
+            country help Cancer Care Trust continue this work every day.
+          </p>
+        {{/if}}
       </div>
 
-      <div class="news-article__content" data-animate="fade-left" data-animate-delay="100">
-        <h2 class="visually-hidden" id="news-article-title">Article</h2>
-
-        <p>
-          A cancer diagnosis can change daily life almost overnight. Alongside
-          medical appointments and treatment decisions, many people face new
-          financial pressures, practical challenges at home, and uncertainty
-          about where to turn for help.
-        </p>
-        <p>
-          Cancer Care Trust works to ease some of those pressures by providing
-          practical and financial support to people affected by cancer, and by
-          funding organisations that improve cancer care, support and research
-          across the UK.
-        </p>
-        <p>
-          For families, even small forms of support can make a meaningful
-          difference — help with unexpected costs, guidance on available
-          services, or simply knowing there is somewhere to ask for advice
-          without judgement.
-        </p>
-        <p>
-          We believe support should consider the whole person. Cancer is only
-          one part of someone’s life, and the right information and practical
-          tools can help people manage its impact across emotional, financial
-          and everyday circumstances.
-        </p>
-        <p>
-          If you or someone you care about needs support, or if you would like
-          to help others receive it, our team is here to listen and guide you
-          towards the next step.
-        </p>
-
+      {{#unless hideActions}}
         <div class="news-article__actions">
-          <a href="news.html" class="news-article__back btn secondary">
-            Back to News
+          <a
+            href="{{#if backHref}}{{backHref}}{{else}}news.html{{/if}}"
+            class="news-article__back btn secondary"
+          >
+            {{#if backText}}{{backText}}{{else}}Back to News{{/if}}
           </a>
-          <a href="contact.html#contact-block" class="news-article__cta btn primary">
-            Get Support
+          <a
+            href="{{#if ctaHref}}{{ctaHref}}{{else}}contact.html#contact-block{{/if}}"
+            class="news-article__cta btn primary"
+          >
+            {{#if ctaText}}{{ctaText}}{{else}}Get Support{{/if}}
           </a>
         </div>
-      </div>
+      {{/unless}}
     </div>
   </div>
 </section>
